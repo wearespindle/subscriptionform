@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class MyUser(AbstractUser):
@@ -48,3 +49,19 @@ class Person(models.Model):
 
     class Meta:
         abstract = True
+
+
+class Coach(Person):
+    """
+    Coaches are the main contact person for a club
+    and manage the registration of participants (i.e. participants
+    don't register themselves).
+    """
+    club = models.ForeignKey('Club', null=True)
+    phone_number = PhoneNumberField()
+    email = models.EmailField(max_length=255)
+    is_main_contact = models.BooleanField(default=False)
+
+
+class Club(models.Model):
+    pass
