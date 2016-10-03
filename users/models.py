@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -64,4 +64,10 @@ class Coach(Person):
 
 
 class Club(models.Model):
-    pass
+    name = models.CharField(_('name'), max_length=128)
+    street = models.CharField(_('street'), max_length=128)
+    number = models.CharField(_('number'), max_length=10, blank=True)
+    zipcode = models.CharField(_('zipcode'), max_length=6)
+    city = models.CharField(_('city'), max_length=30)
+    phone_number = PhoneNumberField(_('phonenumber'))
+    email = models.EmailField(_('email address'), max_length=254)
