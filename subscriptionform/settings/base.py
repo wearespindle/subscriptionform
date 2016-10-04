@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Project apps
+    'sports',
     'users',
 
     # Django Extensions is a collection of custom extensions for the Django
