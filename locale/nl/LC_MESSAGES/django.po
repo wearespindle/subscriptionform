@@ -1,0 +1,100 @@
+# Dutch Translation File
+# Copyright (C) 2016 DevHouse Spindle.
+# This file is distributed under the same license as the Subscriptionform.
+# FIRST AUTHOR <rosien@wearespindle.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-02 17:29+0000\n"
+"PO-Revision-Date: 2016-09-30 11:30+0200\n"
+"Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: subscriptionform/templates/registration/login.html:10
+msgid " Your username and password didn't match. Please try again. "
+msgstr ""
+" Uw gebruikersnaam en wachtwoord komen niet overeen. Probeer het alstublieft "
+"nog een keer."
+
+#: subscriptionform/templates/registration/login.html:15
+msgid ""
+" Your account doesn't have access to this page. To proceed,\n"
+"        please login with an account that has access. "
+msgstr ""
+" Uw account heeft geen toegang tot deze pagina. Om verder te gaan, \n"
+"        log alstublieft in."
+
+#: subscriptionform/templates/registration/login.html:18
+msgid "Please login to see this page."
+msgstr "Log alstublieft in om deze pagina te bekijken."
+
+#: subscriptionform/templates/registration/login.html:39
+msgid "I forgot my password."
+msgstr "Ik ben mijn wachtwoord vergeten."
+
+#: subscriptionform/templates/registration/password_reset_complete.html:4
+msgid "Your password has been successfully reset."
+msgstr "Uw wachtwoord is gereset."
+
+#: subscriptionform/templates/registration/password_reset_confirm.html:3
+#: subscriptionform/templates/registration/password_reset_form.html:4
+msgid "Reset Password"
+msgstr "Reset Wachtwoord"
+
+#: subscriptionform/templates/registration/password_reset_confirm.html:13
+msgid ""
+" This reset link is no longer valid.\n"
+"            Please request a new password reset."
+msgstr ""
+" De reset link is niet meer geldig. \n"
+"            Vraag alstublieft een nieuwe wachtwoord reset aan."
+
+#: subscriptionform/templates/registration/password_reset_done.html:5
+msgid ""
+"Please check your email and follow the instructions to reset your password.\n"
+"    If you don't receive an email, please make sure you have entered the "
+"address you registerd\n"
+"    with and check your spam folder."
+msgstr ""
+"Controleer uw email en volg de instructies om uw wachtwoord te resetten. \n"
+"Als u geen email heeft ontvangen, controleer dan of u het juiste "
+"emailadres \n"
+"heeft ingevuld en controleer uw spam berichten."
+
+#: subscriptionform/templates/registration/password_reset_email.html:3
+#, python-format
+msgid ""
+"Someone asked for password reset for email %(email)s. Follow the link "
+"below:\n"
+"%(protocol)s://%(domain)s"
+msgstr ""
+"Iemand heeft om het resetten van het wachtwoord van email %(email)s "
+"gevraagd. Volg onderstaande link: \n"
+"%(protocol)s://%(domain)s"
+
+#: subscriptionform/templates/registration/password_reset_form.html:7
+msgid ""
+" Please enter your email below so we can send you a link to reset your "
+"password."
+msgstr ""
+"Vul uw emailadres in zodat we u de link kunnen sturen waarmee u uw "
+"wachtwoord kunt resetten."
+
+#: users/models.py:8
+msgid "email address"
+msgstr "emailadres"
+
+#: users/models.py:12
+msgid "date of birth"
+msgstr "geboortedatum"
+
+#: users/models.py:41
+msgid "User"
+msgstr "Gebruiker"
