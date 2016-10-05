@@ -2,3 +2,4 @@
 ### Database                                        ###
 #######################################################
 dj-database-url
+django-phonenumber-field==1.1.0
