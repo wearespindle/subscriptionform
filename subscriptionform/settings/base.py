@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     # Project apps
     'sports',
     'users',
+    'sports',
 
     # Django Extensions is a collection of custom extensions for the Django
     # Framework.
