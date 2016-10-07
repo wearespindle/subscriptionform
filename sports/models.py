@@ -16,7 +16,8 @@ class Participant(Person):
 
 
 class Sport(models.Model):
-    pass
+    name = models.CharField(_('sport'), max_length=30)
+    description = models.CharField(_('description'), max_length=150)
 
 
 class SportDetail(models.Model):
