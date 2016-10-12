@@ -1,14 +1,13 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from users.models import Person
+from users.models import Person, Club
 
 
 class Participant(Person):
     date_of_birth = models.DateField(_('date of birth'))
     wheelchair_bound = models.BooleanField(_('wheelchair bound'), default=False)
     sport = models.ForeignKey('Sport')
-    sport_details = models.ManyToManyField('SportDetail', blank=True)
-    team = models.ManyToManyField('Team', blank=True)
+    sport_details = models.ManyToManyField('SportDetail')
     # TODO: Come up with a way to automatically assign participants to a club/coach.
 
     class Meta:
@@ -58,4 +57,12 @@ class SportDetail(models.Model):
 
 
 class Team(models.Model):
-    pass
+    team_name = models.CharField(max_length=50)
+    club = models.ForeignKey(Club)
+    team_members = models.ManyToManyField(Participant)
+
+    def __str__(self):
+        return self.team_name
+
+    class Meta:
+        verbose_name = _('Team')
