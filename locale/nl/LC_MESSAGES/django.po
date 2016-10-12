@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-02 17:29+0000\n"
+"POT-Creation-Date: 2016-10-13 11:38+0200\n"
 "PO-Revision-Date: 2016-09-30 11:30+0200\n"
 "Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: sports/models.py:7 users/models.py:13
+msgid "date of birth"
+msgstr "geboortedatum"
+
+#: sports/models.py:8
+msgid "wheelchair bound"
+msgstr "rolstoelgebonden"
+
+#: sports/models.py:14
+msgid "Participant"
+msgstr "Deelnemer"
+
+#: sports/models.py:24
+msgid "sport"
+msgstr "sport"
+
+#: sports/models.py:25
+msgid "description"
+msgstr "omschrijving"
+
+#: sports/models.py:28
+msgid "Sport"
+msgstr "Sport"
+
+#: sports/models.py:38
+msgid "detail_name"
+msgstr "detail_naam"
+
+#: sports/models.py:42
+msgid "Detail"
+msgstr "Detail"
+
+#: sports/models.py:53
+msgid "value"
+msgstr "waarde"
+
+#: sports/models.py:68
+msgid "Team"
+msgstr "Team"
+
+#: subscriptionform/templates/home/index.html:4
+msgid "Welcome!"
+msgstr "Welkom!"
+
+#: subscriptionform/templates/home/index.html:6
+msgid ""
+" The Special Olympics Groningen are held biannually and organized by\n"
+"    \"De Brug\". You can find more information about the event <a href="
+"\"http://specialolympicsgroningen.debrugprovinciegroningen.nl/\">here</a>"
+msgstr ""
+" De Special Olympics Groningen worden één keer per twee jaar gehouden en"
+" georganiseerd door \"De Brug\". Je kunt meer informatie over het evenement"
+" <a href="
+"\"http://specialolympicsgroningen.debrugprovinciegroningen.nl/\">hier</a> vinden."
+
+#: subscriptionform/templates/home/index.html:8
+msgid " If you are one of the particpating clubs in the event, please "
+msgstr " Als u één van de deelnemende verenigingen bent, alstublieft "
+
+#: subscriptionform/templates/home/index.html:9
+msgid ""
+" If you are a club and would like to participate in the event but haven't "
+"received\n"
+"    login credentials yet, please contact the organization."
+msgstr ""
+" Als u een vereniging bent en deel wil nemen aan het evenement, "
+" maar nog geen login gegevens heeft ontvangen, neem alstublieft "
+" contact op met de organisatie."
+
+#: subscriptionform/templates/home/index.html:11
+msgid " If you are the event adminstrator, you can login "
+msgstr " Als u de administrator van het evenement bent, kunt u inloggen."
 
 #: subscriptionform/templates/registration/login.html:10
 msgid " Your username and password didn't match. Please try again. "
@@ -87,14 +160,34 @@ msgstr ""
 "Vul uw emailadres in zodat we u de link kunnen sturen waarmee u uw "
 "wachtwoord kunt resetten."
 
-#: users/models.py:8
+#: users/models.py:9 users/models.py:73
 msgid "email address"
 msgstr "emailadres"
 
-#: users/models.py:12
-msgid "date of birth"
-msgstr "geboortedatum"
-
-#: users/models.py:41
+#: users/models.py:42
 msgid "User"
 msgstr "Gebruiker"
+
+#: users/models.py:67
+msgid "name"
+msgstr "naam"
+
+#: users/models.py:68
+msgid "street"
+msgstr "straat"
+
+#: users/models.py:69
+msgid "number"
+msgstr "nummer"
+
+#: users/models.py:70
+msgid "zipcode"
+msgstr "postcode"
+
+#: users/models.py:71
+msgid "city"
+msgstr "stad"
+
+#: users/models.py:72
+msgid "phonenumber"
+msgstr "telefoonnummer"
