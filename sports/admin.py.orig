@@ -1,0 +1,33 @@
+from django.contrib import admin
+<<<<<<< HEAD
+from .models import Participant, Sport, SportDetail, Detail
+=======
+from .models import Participant, Sport, Team
+>>>>>>> cadccdf... Team model
+
+
+@admin.register(Participant)
+class ParticipantAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'sport')
+    list_filter = ('sport', 'wheelchair_bound',)
+
+
+@admin.register(Sport)
+class SportAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+
+<<<<<<< HEAD
+@admin.register(SportDetail)
+class SportDetailAdmin(admin.ModelAdmin):
+    list_display = ('detail', 'sport',)
+
+
+@admin.register(Detail)
+class DetailAdmin(admin.ModelAdmin):
+    list_display = ('name_of_detail',)
+=======
+@admin.register(Team)
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ('team_name', 'club',)
+>>>>>>> cadccdf... Team model
