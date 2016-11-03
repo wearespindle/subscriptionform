@@ -4,8 +4,13 @@ from users.models import Person, Club
 
 
 class Participant(Person):
+    """
+    A model representing Participants of the sports event. It gathers some personal information
+    by extending the Person class and assigns them to a sport and sport detail.
+    """
     date_of_birth = models.DateField(_('date of birth'))
     wheelchair_bound = models.BooleanField(_('wheelchair bound'), default=False)
+    photo_choice = models.BooleanField(_('Photography allowed'), default=True)
     sport = models.ForeignKey('Sport')
     sport_details = models.ManyToManyField('SportDetail')
     # TODO: Come up with a way to automatically assign participants to a club/coach.
