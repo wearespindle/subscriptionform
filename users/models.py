@@ -58,7 +58,7 @@ class Coach(Person):
     don't register themselves).
     """
     club = models.ForeignKey('Club', null=True)
-    phone_number = PhoneNumberField()
+    phone_number = PhoneNumberField(_('phonenumber'), default='+31')
     email = models.EmailField(max_length=255)
     is_main_contact = models.BooleanField(default=False)
 
@@ -69,5 +69,5 @@ class Club(models.Model):
     number = models.CharField(_('number'), max_length=10, blank=True)
     zipcode = models.CharField(_('zipcode'), max_length=6)
     city = models.CharField(_('city'), max_length=30)
-    phone_number = PhoneNumberField(_('phonenumber'))
+    phone_number = PhoneNumberField(_('phonenumber'), default='+31')
     email = models.EmailField(_('email address'), max_length=254)
