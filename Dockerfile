@@ -3,6 +3,7 @@ MAINTAINER subscriptionform
 
 RUN useradd docker
 RUN echo "ALL ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 ENV HOME /home/docker
 
 ADD requirements.txt $HOME/requirements.txt
