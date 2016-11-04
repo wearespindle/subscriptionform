@@ -1,25 +1,36 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
 from django.db import models
 from django.utils.translation import ugettext as _
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-class MyUser(AbstractUser):
+class MyUser(PermissionsMixin, AbstractBaseUser):
+    """
+    Custom User model that allows logging in with email as username.
+    """
+    first_name = models.CharField(_('first name'), max_length=50)
+    last_name = models.CharField(_('last name'), max_length=50)
+    date_of_birth = models.DateField(_('date of birth'), blank=True, null=True)
     email = models.EmailField(
         verbose_name=_('email address'),
         max_length=255,
         unique=True,
     )
-    date_of_birth = models.DateField(_('date of birth'), blank=True, null=True)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(_('staff status'), default=True,
+                                   help_text=_('Designates whether the user can log into this admin '
+                                               'site.'))
+    is_active = models.BooleanField(_('active'), default=True,
+                                    help_text=_('Designates whether this user should be treated as '
+                                                'active. Deselect this instead of deleting accounts.'))
+    is_superuser = models.BooleanField(_('superuser'), default=False,)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['first_name', 'last_name']
+
+    objects = UserManager()
 
     def get_full_name(self):
-        # The user is identified by his/her email address
-        return self.email
+        return self.first_name + self.last_name
 
     def get_short_name(self):
         # The user is identified by his/her email address
@@ -28,30 +39,18 @@ class MyUser(AbstractUser):
     def __str__(self):
         return self.email
 
-    def has_perm(self, perm, obj=None):
-        """Does the user have a specific permission?"""
-        # Simplest possible answer: Yes, always
-        return True
-
-    def has_module_perms(self, app_label):
-        """Does the user have permissions to view the app `app_label`?"""
-        # Simplest possible answer: Yes, always
-        return True
-
     class Meta:
         verbose_name = _('User')
 
 
 class Person(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
     food_preferences = models.CharField(max_length=255, blank=True)
 
     class Meta:
         abstract = True
 
 
-class Coach(Person):
+class Coach(Person, MyUser):
     """
     Coaches are the main contact person for a club
     and manage the registration of participants (i.e. participants
@@ -59,8 +58,6 @@ class Coach(Person):
     """
     club = models.ForeignKey('Club', null=True)
     phone_number = PhoneNumberField(_('phonenumber'), default='+31')
-    email = models.EmailField(max_length=255)
-    is_main_contact = models.BooleanField(default=False)
 
 
 class Club(models.Model):
