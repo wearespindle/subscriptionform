@@ -3,7 +3,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from home.views import index, add_participant
-from sports.views import ParticipantList
+from sports.views import ParticipantDetail, ParticipantList
 
 urlpatterns = [
 
@@ -12,6 +12,7 @@ urlpatterns = [
     url('^', include('django.contrib.auth.urls')),
     url('^add_participant/', add_participant, name='add_participant'),
     url('^participants/$', ParticipantList.as_view()),
+    url(r'^participants/(?P<pk>\d+)/$', ParticipantDetail.as_view(), name='participant_detail'),
 ]
 
 if settings.DEBUG and settings.MEDIA_ROOT:
