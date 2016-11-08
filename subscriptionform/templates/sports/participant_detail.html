@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Participant information</h2>
+    <p>First name: {{ participant.first_name }}</p>
+    <p>Last name: {{ participant.last_name }}</p>
+    <p>Date of birth: {{ participant.date_of_birth }}</p>
+    <p>Wheelchair bound: {{ participant.wheelchair_bound }}</p>
+    <p>Photos allowed? {{ participant.photo_choice }}</p>
+    <p>Dietary restrictions: {{ participant.food_preferences }}</p>
+    <p>Participates in: {{ participant.sport }}</p>
+{% endblock %}
