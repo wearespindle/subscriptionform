@@ -57,9 +57,6 @@ class SportDetail(models.Model):
     detail = models.ForeignKey(Detail)
     value = models.CharField(_('value'), max_length=20)
 
-    def __str__(self):
-        return self.sport + "-" + self.detail
-
 
 class Team(models.Model):
     team_name = models.CharField(max_length=50)
