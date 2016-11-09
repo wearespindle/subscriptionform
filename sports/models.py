@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.urls import reverse
+
 from users.models import Person, Club
 
 
@@ -29,6 +31,9 @@ class Participant(Person):
 
     def __str__(self):
         return self.get_full_name()
+
+    def get_absolute_url(self):
+        return reverse('participant_detail', kwargs={'pk': self.pk})
 
 
 class Sport(models.Model):
