@@ -4,7 +4,7 @@
     <h2>Participants</h2>
     <uL>
         {% for participant in participant_list %}
-            <li>{{ participant.first_name }} {{ participant.last_name }}</li>
+            <li><a href="{% url 'participant_detail' pk=participant.pk %}">{{ participant.full_name }}</a></li>
         {% endfor %}
     </uL>
 {% endblock %}
