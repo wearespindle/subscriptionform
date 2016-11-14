@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-14 11:47+0100\n"
+"POT-Creation-Date: 2016-11-15 11:32+0100\n"
 "PO-Revision-Date: 2016-09-30 11:30+0200\n"
 "Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,6 @@ msgid "first name"
 msgstr ""
 
 #: sports/models.py:14 users/models.py:12
-#| msgid "name"
 msgid "last name"
 msgstr "achternaam"
 
@@ -71,6 +70,7 @@ msgid "Team"
 msgstr "Team"
 
 #: subscriptionform/templates/home/index.html:4
+#: subscriptionform/templates/home/menu.html:5
 #: subscriptionform/templates/sports/participant_form.html:4
 msgid "Welcome!"
 msgstr "Welkom!"
@@ -103,6 +103,16 @@ msgstr ""
 #: subscriptionform/templates/home/index.html:11
 msgid " If you are the event adminstrator, you can login "
 msgstr " Als u de administrator van het evenement bent, kunt u inloggen."
+
+#: subscriptionform/templates/home/menu.html:6
+msgid ""
+"If you want to go to your registered participants, or add a participant, "
+"click "
+msgstr "Als u uw ingeschreven deelnemers wil bekijken, of een deelnemer wil toevoegen, klik"
+
+#: subscriptionform/templates/home/menu.html:7
+msgid "here"
+msgstr "hier"
 
 #: subscriptionform/templates/registration/login.html:10
 msgid " Your username and password didn't match. Please try again. "
@@ -227,7 +237,6 @@ msgid "Participants"
 msgstr "Deelnemers"
 
 #: subscriptionform/templates/sports/participant_list.html:11
-#| msgid "Participant"
 msgid "Add Participant"
 msgstr "Deelnemer toevoegen"
 
@@ -251,7 +260,9 @@ msgstr "actief"
 msgid ""
 "Designates whether this user should be treated as active. Deselect this "
 "instead of deleting accounts."
-msgstr "Geeft aan of deze gebruiker actief is. Deselecteer dit in plaats van accounts te verwijderen."
+msgstr ""
+"Geeft aan of deze gebruiker actief is. Deselecteer dit in plaats van "
+"accounts te verwijderen."
 
 #: users/models.py:25
 msgid "superuser"
