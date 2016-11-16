@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'home',
     'sports',
     'users',
+    'club',
 
     # Django Extensions is a collection of custom extensions for the Django
     # Framework.
@@ -60,6 +61,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'club.middleware.ClubMiddleware',
 )
 
 ROOT_URLCONF = 'subscriptionform.urls'

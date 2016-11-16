@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.translation import ugettext as _
 from phonenumber_field.modelfields import PhoneNumberField
 
+from club.models import ClubMixin, Club
+
 
 class MyUser(PermissionsMixin, AbstractBaseUser):
     """
@@ -10,6 +12,7 @@ class MyUser(PermissionsMixin, AbstractBaseUser):
     """
     first_name = models.CharField(_('first name'), max_length=50)
     last_name = models.CharField(_('last name'), max_length=50)
+    username = models.CharField(_('username'), max_length=30)
     date_of_birth = models.DateField(_('date of birth'), blank=True, null=True)
     email = models.EmailField(
         verbose_name=_('email address'),
@@ -22,10 +25,11 @@ class MyUser(PermissionsMixin, AbstractBaseUser):
     is_active = models.BooleanField(_('active'), default=True,
                                     help_text=_('Designates whether this user should be treated as '
                                                 'active. Deselect this instead of deleting accounts.'))
-    is_superuser = models.BooleanField(_('superuser'), default=False,)
+    is_superuser = models.BooleanField(_('superuser'), default=False)
+    club = models.ForeignKey(Club)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'username', 'club',]
 
     objects = UserManager()
 
@@ -43,28 +47,18 @@ class MyUser(PermissionsMixin, AbstractBaseUser):
         verbose_name = _('User')
 
 
-class Person(models.Model):
+class Person(ClubMixin):
     food_preferences = models.CharField(max_length=255, blank=True)
 
     class Meta:
         abstract = True
 
 
-class Coach(Person, MyUser):
-    """
-    Coaches are the main contact person for a club
-    and manage the registration of participants (i.e. participants
-    don't register themselves).
-    """
-    club = models.ForeignKey('Club', null=True)
-    phone_number = PhoneNumberField(_('phonenumber'), default='+31')
-
-
-class Club(models.Model):
-    name = models.CharField(_('name'), max_length=128)
-    street = models.CharField(_('street'), max_length=128)
-    number = models.CharField(_('number'), max_length=10, blank=True)
-    zipcode = models.CharField(_('zipcode'), max_length=6)
-    city = models.CharField(_('city'), max_length=30)
-    phone_number = PhoneNumberField(_('phonenumber'), default='+31')
-    email = models.EmailField(_('email address'), max_length=254)
+# class Coach(Person, MyUser):
+#     """
+#     Coaches are the main contact person for a club
+#     and manage the registration of participants (i.e. participants
+#     don't register themselves).
+#     """
+#     # club = models.ForeignKey('Club', null=True)
+#     phone_number = PhoneNumberField(_('phonenumber'), default='+31')
