@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
 from django.db import models
 from django.utils.translation import ugettext as _
-from phonenumber_field.modelfields import PhoneNumberField
 
 from club.models import ClubMixin, Club
 
@@ -29,7 +28,7 @@ class MyUser(PermissionsMixin, AbstractBaseUser):
     club = models.ForeignKey(Club)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'username', 'club',]
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'username', 'club', ]
 
     objects = UserManager()
 
@@ -52,13 +51,3 @@ class Person(ClubMixin):
 
     class Meta:
         abstract = True
-
-
-# class Coach(Person, MyUser):
-#     """
-#     Coaches are the main contact person for a club
-#     and manage the registration of participants (i.e. participants
-#     don't register themselves).
-#     """
-#     # club = models.ForeignKey('Club', null=True)
-#     phone_number = PhoneNumberField(_('phonenumber'), default='+31')

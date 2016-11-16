@@ -6,9 +6,6 @@ from .middleware import get_current_user
 
 
 class ClubManager(models.Manager):
-    """
-    Based on Lily's TenantManager.
-    """
     use_for_related_fields = True
 
     def get_queryset(self):
@@ -40,9 +37,7 @@ class Club(models.Model):
 
 
 class ClubMixin(models.Model):
-    """
-    Based on Lily's MultiTenantMixin.
-    """
+    # Automatically filter any queryset by club if logged in.
     objects = ClubManager()
     club = models.ForeignKey(Club, blank=True)
 
