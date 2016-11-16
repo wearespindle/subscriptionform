@@ -11,3 +11,4 @@ django-extensions
 ### Debug                                           ###
 #######################################################
 django-debug-toolbar
+ipdb
