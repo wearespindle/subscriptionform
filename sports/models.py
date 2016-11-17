@@ -8,7 +8,8 @@ from users.models import Person, Club
 class Participant(Person):
     """
     A model representing Participants of the sports event. It gathers some personal information
-    by extending the Person class and assigns them to a sport and sport detail.
+    by extending the Person class and assigns them to a sport and sport detail. Participants are
+    automatically assigned to the Club to which the User that registered them belongs.
     """
     first_name = models.CharField(_('first name'), max_length=50)
     last_name = models.CharField(_('last name'), max_length=50)
@@ -17,7 +18,6 @@ class Participant(Person):
     photo_choice = models.BooleanField(_('Photography allowed'), default=True)
     sport = models.ForeignKey('Sport')
     sport_details = models.ManyToManyField('SportDetail', blank=True)
-    # TODO: Come up with a way to automatically assign participants to a club/coach.
 
     class Meta:
         verbose_name = _('Participant')
@@ -37,6 +37,9 @@ class Participant(Person):
 
 
 class Sport(models.Model):
+    """
+    The sport model represents a sport that will be played during the event.
+    """
     name = models.CharField(_('sport'), max_length=30)
     description = models.CharField(_('description'), max_length=150, blank=True)
 
@@ -62,14 +65,19 @@ class Detail(models.Model):
 
 
 class SportDetail(models.Model):
-    """SportDetail is an intermediate model between the Sport and Detail models.
-    It can be a time, weight class, personal record etc."""
+    """
+    SportDetail is an intermediate model between the Sport and Detail models.
+    It can be a time, weight class, personal record etc.
+    """
     sport = models.ForeignKey(Sport)
     detail = models.ForeignKey(Detail, blank=True)
     value = models.CharField(_('value'), max_length=20)
 
 
 class Team(models.Model):
+    """
+    A team is a collection of Participants that is linked to a Club.
+    """
     team_name = models.CharField(max_length=50)
     club = models.ForeignKey(Club)
     team_members = models.ManyToManyField(Participant)
