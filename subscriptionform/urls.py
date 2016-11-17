@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url('^', include('django.contrib.auth.urls')),
     url('^', include('sports.urls')),
+    url('^', include('users.urls')),
     url(r'^menu/$', MenuView.as_view(), name='menu')
 
 ]

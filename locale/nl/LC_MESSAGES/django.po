@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-17 10:07+0100\n"
+"POT-Creation-Date: 2016-11-18 09:31+0100\n"
 "PO-Revision-Date: 2016-09-30 11:30+0200\n"
 "Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: sports/models.py:13 users/models.py:11
+#: club/models.py:27
+msgid "name"
+msgstr "naam"
+
+#: club/models.py:28
+msgid "street"
+msgstr "straat"
+
+#: club/models.py:29
+msgid "number"
+msgstr "nummer"
+
+#: club/models.py:30
+msgid "zipcode"
+msgstr "postcode"
+
+#: club/models.py:31
+msgid "city"
+msgstr "stad"
+
+#: club/models.py:32
+msgid "phonenumber"
+msgstr "telefoonnummer"
+
+#: club/models.py:33 users/models.py:17
+msgid "email address"
+msgstr "emailadres"
+
+#: sports/models.py:14 users/models.py:12
 msgid "first name"
 msgstr "voornaam"
 
-#: sports/models.py:14 users/models.py:12
+#: sports/models.py:15 users/models.py:13
 msgid "last name"
 msgstr "achternaam"
 
-#: sports/models.py:15 users/models.py:13
+#: sports/models.py:16 users/models.py:15
 msgid "date of birth"
 msgstr "geboortedatum"
 
-#: sports/models.py:16
+#: sports/models.py:17
 msgid "wheelchair bound"
 msgstr "rolstoelgebonden"
 
-#: sports/models.py:17
+#: sports/models.py:18
 msgid "Photography allowed"
 msgstr "Fotograferen toegestaan"
 
@@ -41,37 +69,38 @@ msgstr "Fotograferen toegestaan"
 msgid "Participant"
 msgstr "Deelnemer"
 
-#: sports/models.py:40
+#: sports/models.py:43
 msgid "sport"
 msgstr "sport"
 
-#: sports/models.py:41
+#: sports/models.py:44
 msgid "description"
 msgstr "omschrijving"
 
-#: sports/models.py:44
+#: sports/models.py:47
 msgid "Sport"
 msgstr "Sport"
 
-#: sports/models.py:54
+#: sports/models.py:57
 msgid "detail_name"
 msgstr "detail_naam"
 
-#: sports/models.py:58
+#: sports/models.py:61
 msgid "Detail"
 msgstr "Detail"
 
-#: sports/models.py:69
+#: sports/models.py:74
 msgid "value"
 msgstr "waarde"
 
-#: sports/models.py:81
+#: sports/models.py:89
 msgid "Team"
 msgstr "Team"
 
 #: subscriptionform/templates/home/index.html:4
 #: subscriptionform/templates/home/menu.html:5
 #: subscriptionform/templates/sports/participant_form.html:4
+#: subscriptionform/templates/users/myuser_form.html:4
 msgid "Welcome!"
 msgstr "Welkom!"
 
@@ -104,17 +133,18 @@ msgstr ""
 msgid " If you are the event adminstrator, you can login "
 msgstr " Als u de administrator van het evenement bent, kunt u inloggen."
 
-#: subscriptionform/templates/home/menu.html:6
-msgid ""
-"If you want to go to your registered participants, or add a participant, "
-"click "
-msgstr ""
-"Als u uw ingeschreven deelnemers wil bekijken, of een deelnemer wil "
-"toevoegen, klik"
-
 #: subscriptionform/templates/home/menu.html:7
-msgid "here"
-msgstr "hier"
+#| msgid ""
+#| "\n"
+#| "            <p> If you want to update your private details, please click "
+#| "<a href =\"%(the_url)s\">here</a>.</p>\n"
+#| "        "
+msgid ""
+"If you want to update your private details, please click\n"
+"            <a href =\"%(the_url)s\">here</a>. "
+msgstr ""
+"Als u uw persoonlijke gegevens wilt wijzigen, klik\n"
+"           <a href =\"%(the_url)s\">hier</a>. "
 
 #: subscriptionform/templates/registration/login.html:10
 msgid " Your username and password didn't match. Please try again. "
@@ -196,27 +226,22 @@ msgid "Participant information "
 msgstr "Deelnemersinformatie"
 
 #: subscriptionform/templates/sports/participant_detail.html:6
-#| msgid "last name"
 msgid "First name:"
 msgstr "Voornaam"
 
 #: subscriptionform/templates/sports/participant_detail.html:7
-#| msgid "last name"
 msgid "Last name:"
 msgstr "Achternaam"
 
 #: subscriptionform/templates/sports/participant_detail.html:8
-#| msgid "date of birth"
 msgid "Date of birth:"
 msgstr "geboortedatum"
 
 #: subscriptionform/templates/sports/participant_detail.html:9
-#| msgid "wheelchair bound"
 msgid "Wheelchair bound:"
 msgstr "rolstoelgebonden"
 
 #: subscriptionform/templates/sports/participant_detail.html:10
-#| msgid "Photography allowed"
 msgid "Photos allowed?:"
 msgstr "Fotograferen toegestaan"
 
@@ -225,12 +250,10 @@ msgid "Dietary restrictions:"
 msgstr "dieetbeperkingen"
 
 #: subscriptionform/templates/sports/participant_detail.html:12
-#| msgid "Participants"
 msgid "Participates in:"
 msgstr "Neemt deel aan:"
 
 #: subscriptionform/templates/sports/participant_detail.html:14
-#| msgid "Add Participant"
 msgid "Edit Participant"
 msgstr "Deelnemer toevoegen"
 
@@ -250,23 +273,27 @@ msgstr "Deelnemers"
 msgid "Add Participant"
 msgstr "Deelnemer toevoegen"
 
-#: users/models.py:15 users/models.py:70
-msgid "email address"
-msgstr "emailadres"
+#: subscriptionform/templates/users/myuser_form.html:6
+msgid "Update your personal details."
+msgstr "Wijzig uw persoonlijke gegevens."
 
-#: users/models.py:19
+#: users/models.py:14
+msgid "username"
+msgstr "gebruikersnaam"
+
+#: users/models.py:21
 msgid "staff status"
 msgstr "staff status"
 
-#: users/models.py:20
+#: users/models.py:22
 msgid "Designates whether the user can log into this admin site."
 msgstr "Geeft aan of de gebruiker kan inloggen op de admin site"
 
-#: users/models.py:22
+#: users/models.py:24
 msgid "active"
 msgstr "actief"
 
-#: users/models.py:23
+#: users/models.py:25
 msgid ""
 "Designates whether this user should be treated as active. Deselect this "
 "instead of deleting accounts."
@@ -274,34 +301,14 @@ msgstr ""
 "Geeft aan of deze gebruiker actief is. Deselecteer dit in plaats van "
 "accounts te verwijderen."
 
-#: users/models.py:25
+#: users/models.py:27
 msgid "superuser"
 msgstr "superuser"
 
-#: users/models.py:43
+#: users/models.py:45
 msgid "User"
 msgstr "Gebruiker"
 
-#: users/models.py:60 users/models.py:69
-msgid "phonenumber"
-msgstr "telefoonnummer"
-
-#: users/models.py:64
-msgid "name"
-msgstr "naam"
-
-#: users/models.py:65
-msgid "street"
-msgstr "straat"
-
-#: users/models.py:66
-msgid "number"
-msgstr "nummer"
-
-#: users/models.py:67
-msgid "zipcode"
-msgstr "postcode"
-
-#: users/models.py:68
-msgid "city"
-msgstr "stad"
+#: users/views.py:15
+msgid "Your details were updated successfully."
+msgstr "Uw gegevens zijn gewijzigd."

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Welcome!' %}{% endblock %}
+{% block content %}
+    <h2>{% blocktrans %}Update your personal details.{% endblocktrans %}</h2>
+    <form method="POST" class="add-form">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Save</button>
+    </form>
+
+{% endblock %}

@@ -3,6 +3,15 @@
 
 {% block content %}
     <h2>{% blocktrans %}Welcome!{% endblocktrans %}</h2>
-    <p>{% blocktrans %}If you want to go to your registered participants, or add a participant, click {% endblocktrans %}
-    <a href="{% url 'participants' %}">{% blocktrans %}here{% endblocktrans %}</a>.</p>
+        {% url 'user_update' as the_url %}
+        <p>{% blocktrans %}If you want to update your private details, please click
+            <a href ="{{ the_url }}">here</a>. {% endblocktrans %}</p>
+        <br>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+        </ul>
 {% endblock %}
