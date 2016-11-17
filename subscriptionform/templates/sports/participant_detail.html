@@ -3,13 +3,17 @@
 
 {% block content %}
     <h2>{% blocktrans %}Participant information {% endblocktrans %}</h2>
-    <p>{% blocktrans %}First name: {{ participant.first_name }}{% endblocktrans %}</p>
-    <p>{% blocktrans %}Last name: {{ participant.last_name }}{% endblocktrans %}</p>
-    <p>{% blocktrans %}Date of birth: {{ participant.date_of_birth }}{% endblocktrans %}</p>
-    <p>{% blocktrans %}Wheelchair bound: {{ participant.wheelchair_bound }}{% endblocktrans %}</p>
-    <p>{% blocktrans %}Photos allowed?: {{ participant.photo_choice }}{% endblocktrans %}</p>
-    <p>{% blocktrans %}Dietary restrictions: {{ participant.food_preferences }}{% endblocktrans %}</p>
-    <p>{% blocktrans %}Participates in: {{ participant.sport }}{% endblocktrans %}</p>
+    <p>{% blocktrans %}First name:{% endblocktrans %} {{ participant.first_name }}</p>
+    <p>{% blocktrans %}Last name:{% endblocktrans %} {{ participant.last_name }}</p>
+    <p>{% blocktrans %}Date of birth:{% endblocktrans %} {{ participant.date_of_birth }}</p>
+    <p>{% blocktrans %}Wheelchair bound:{% endblocktrans %} {{ participant.wheelchair_bound }}</p>
+    <p>{% blocktrans %}Photos allowed?:{% endblocktrans %} {{ participant.photo_choice }}</p>
+    <p>{% blocktrans %}Dietary restrictions:{% endblocktrans %} {{ participant.food_preferences }}</p>
+    <p>{% blocktrans %}Participates in:{% endblocktrans %} {{ participant.sport }}</p>
 
+    <a href="{% url 'participant_update' pk=participant.pk %}">{% blocktrans %}Edit Participant{% endblocktrans %}</a>
+    <br>
     <a href="{% url 'participant_delete' pk=participant.pk %}">{% blocktrans %}Delete Participant{% endblocktrans %}</a>
+    <br>
+    <a href="{% url 'participants' %}">{% blocktrans %}Return to participant list{% endblocktrans %}</a>
 {% endblock %}
