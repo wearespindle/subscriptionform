@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-15 11:32+0100\n"
+"POT-Creation-Date: 2016-11-17 10:07+0100\n"
 "PO-Revision-Date: 2016-09-30 11:30+0200\n"
 "Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: sports/models.py:13 users/models.py:11
 msgid "first name"
-msgstr ""
+msgstr "voornaam"
 
 #: sports/models.py:14 users/models.py:12
 msgid "last name"
@@ -108,7 +108,9 @@ msgstr " Als u de administrator van het evenement bent, kunt u inloggen."
 msgid ""
 "If you want to go to your registered participants, or add a participant, "
 "click "
-msgstr "Als u uw ingeschreven deelnemers wil bekijken, of een deelnemer wil toevoegen, klik"
+msgstr ""
+"Als u uw ingeschreven deelnemers wil bekijken, of een deelnemer wil "
+"toevoegen, klik"
 
 #: subscriptionform/templates/home/menu.html:7
 msgid "here"
@@ -194,43 +196,51 @@ msgid "Participant information "
 msgstr "Deelnemersinformatie"
 
 #: subscriptionform/templates/sports/participant_detail.html:6
-#, python-format
-msgid "First name: %(participant.first_name)s"
-msgstr "Voornaam: %(participant.first_name)s"
+#| msgid "last name"
+msgid "First name:"
+msgstr "Voornaam"
 
 #: subscriptionform/templates/sports/participant_detail.html:7
-#, python-format
-msgid "Last name: %(participant.last_name)s"
-msgstr "Achternaam: %(participant.last_name)s"
+#| msgid "last name"
+msgid "Last name:"
+msgstr "Achternaam"
 
 #: subscriptionform/templates/sports/participant_detail.html:8
-#, python-format
-msgid "Date of birth: %(participant.date_of_birth)s"
-msgstr "Geboortedatum: %(participant.date_of_birth)s"
+#| msgid "date of birth"
+msgid "Date of birth:"
+msgstr "geboortedatum"
 
 #: subscriptionform/templates/sports/participant_detail.html:9
-#, python-format
-msgid "Wheelchair bound: %(participant.wheelchair_bound)s"
-msgstr "Rolstoelgebonden: %(participant.wheelchair_bound)s"
+#| msgid "wheelchair bound"
+msgid "Wheelchair bound:"
+msgstr "rolstoelgebonden"
 
 #: subscriptionform/templates/sports/participant_detail.html:10
-#, python-format
-msgid "Photos allowed?: %(participant.photo_choice)s"
-msgstr "Fotograferen toegestaan? %(participant.photo_choice)s"
+#| msgid "Photography allowed"
+msgid "Photos allowed?:"
+msgstr "Fotograferen toegestaan"
 
 #: subscriptionform/templates/sports/participant_detail.html:11
-#, python-format
-msgid "Dietary restrictions: %(participant.food_preferences)s"
-msgstr "Dieetbeperkingen: %(participant.food_preferences)s"
+msgid "Dietary restrictions:"
+msgstr "dieetbeperkingen"
 
 #: subscriptionform/templates/sports/participant_detail.html:12
-#, python-format
-msgid "Participates in: %(participant.sport)s"
-msgstr "Neemt deel aan: %(participant.sport)s"
+#| msgid "Participants"
+msgid "Participates in:"
+msgstr "Neemt deel aan:"
 
 #: subscriptionform/templates/sports/participant_detail.html:14
+#| msgid "Add Participant"
+msgid "Edit Participant"
+msgstr "Deelnemer toevoegen"
+
+#: subscriptionform/templates/sports/participant_detail.html:16
 msgid "Delete Participant"
 msgstr "Deelnemer verwijderen"
+
+#: subscriptionform/templates/sports/participant_detail.html:18
+msgid "Return to participant list"
+msgstr "Ga terug naar deelnemersoverzicht"
 
 #: subscriptionform/templates/sports/participant_list.html:5
 msgid "Participants"
