@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h2>{% blocktrans %}Team information{% endblocktrans %}</h2>
+    <p>{% blocktrans %}Team name:{% endblocktrans %} {{ team.team_name }}</p>
+    <p>{% blocktrans %}Team members:{% endblocktrans %}</p>
+    <uL>
+        {% for member in team.team_members.all %}
+            <li>
+                {{ member }}
+            </li>
+        {% endfor %}
+    </uL>
+
+    <a href="{% url 'team_update' pk=team.pk %}">{% blocktrans %}Edit Team{% endblocktrans %}</a>
+    <br>
+    <a href="{% url 'team_delete_confirm' pk=team.pk %}">{% blocktrans %}Delete Team{% endblocktrans %}</a>
+    <br>
+    <a href="{% url 'teams' %}">{% blocktrans %}Return to team list{% endblocktrans %}</a>
+{% endblock %}

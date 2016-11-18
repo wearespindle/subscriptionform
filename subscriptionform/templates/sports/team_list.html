@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h2>{% blocktrans %}Teams{% endblocktrans %}</h2>
+    <uL>
+        {% for team in team_list %}
+            <li><a href="{% url 'team_detail' pk=team.pk %}">{{ team.team_name }}</a></li>
+        {% endfor %}
+    </uL>
+    <a href="{% url 'team_add' %}">{% blocktrans %}Add Team{% endblocktrans %}</a>
+{% endblock %}

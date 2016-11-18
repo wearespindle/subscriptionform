@@ -2,7 +2,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
 
-from users.models import Person, Club
+from club.models import Club, ClubMixin
+from users.models import MyUser, Person
 
 
 class Participant(Person):
@@ -74,16 +75,19 @@ class SportDetail(models.Model):
     value = models.CharField(_('value'), max_length=20)
 
 
-class Team(models.Model):
+class Team(ClubMixin):
     """
     A team is a collection of Participants that is linked to a Club.
     """
     team_name = models.CharField(max_length=50)
     club = models.ForeignKey(Club)
-    team_members = models.ManyToManyField(Participant)
+    team_members = models.ManyToManyField(Participant, related_name='team_members')
 
     def __str__(self):
         return self.team_name
+
+    def get_absolute_url(self):
+        return reverse('team_detail', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = _('Team')
