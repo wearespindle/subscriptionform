@@ -3,6 +3,10 @@
 
 {% block content %}
     <h2>{% blocktrans %}Welcome!{% endblocktrans %}</h2>
+        {% url 'participants' as participanturl %}
+        <p>{% blocktrans %}If you want to go to your registered participants, or add a participant, click
+            <a href="{{ participanturl }}">here</a>.{% endblocktrans %}</p>
+
         {% url 'user_update' as the_url %}
         <p>{% blocktrans %}If you want to update your private details, please click
             <a href ="{{ the_url }}">here</a>. {% endblocktrans %}</p>
