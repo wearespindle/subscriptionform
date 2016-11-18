@@ -27,7 +27,7 @@ class MyUser(ClubMixin, PermissionsMixin, AbstractBaseUser):
     is_superuser = models.BooleanField(_('superuser'), default=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'username', 'club', ]
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'username', ]
 
     objects = UserManager()
 
