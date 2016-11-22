@@ -11,8 +11,18 @@
 
     <title>{% block head_title %}{% endblock %}</title>
     <meta charset="utf-8">
+
 </head>
 <body>
+<div id="header">
+    {% if user.is_authenticated %}
+        {% block header %}
+            <a href="{% url 'logout' %}">{% blocktrans %}Logout{% endblocktrans %}</a>
+            <br>
+            <a href="{% url 'menu' %}">Menu</a>
+        {% endblock %}
+    {% endif %}
+</div>
 
 <div id="container">
     {% block content %}
