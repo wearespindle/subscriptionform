@@ -22,8 +22,8 @@ class MyUserAdmin(admin.ModelAdmin):
                        )
         }),
     )
-    list_display = ('email', 'first_name', 'last_name', 'is_active',)
-    list_filter = ('is_staff', 'is_superuser', 'is_active',)
+    list_display = ('email', 'first_name', 'last_name', 'club', 'is_active',)
+    list_filter = ('is_staff', 'is_superuser', 'club', 'is_active',)
 
     def save_model(self, request, obj, form, change):
         """
