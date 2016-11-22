@@ -1,25 +1,30 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+
 {% block content %}
-    <h2>{% blocktrans %}Welcome!{% endblocktrans %}</h2>
-        {% url 'participants' as participanturl %}
-        <p>{% blocktrans %}If you want to go to your registered participants, or add a participant, click
-            <a href="{{ participanturl }}">here</a>.{% endblocktrans %}</p>
-        <br>
-        {% url 'teams' as teamurl %}
-        <p>{% blocktrans %}For an overview of your registered teams, or to create a team, click
-            <a href="{{ teamurl }}">here</a>.{% endblocktrans %}</p>
-        <br>
-        {% url 'user_update' as the_url %}
-        <p>{% blocktrans %}If you want to update your private details, please click
-            <a href ="{{ the_url }}">here</a>. {% endblocktrans %}</p>
-        <br>
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        {% endif %}
+    <div class="header-image">
+    </div>
+    <div class="container">
+        <ul class="menu-navigation">
+            <li class="menu-navigation-item">
+                <a class="menu-navigation-image" href="http://specialolympicsgroningen.debrugprovinciegroningen.nl/"></a>
+            </li>
+            <li class="menu-navigation-item">
+                {% url 'participants' as participanturl %}
+                {% blocktrans %}<a class="menu-navigation-link" href="{{ participanturl }}">Participants</a>{% endblocktrans %}
+            </li>
+            <li class="menu-navigation-item">
+                {% url 'teams' as teamurl %}
+                {% blocktrans %}<a class="menu-navigation-link" href="{{ teamurl }}">Teams</a>{% endblocktrans %}
+            </li>
         </ul>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
 {% endblock %}

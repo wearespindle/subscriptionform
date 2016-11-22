@@ -2,11 +2,33 @@
 {% load i18n %}
 
 {% block content %}
-    <h2>{% blocktrans %}Participants{% endblocktrans %}</h2>
-    <uL>
-        {% for participant in participant_list %}
-            <li><a href="{% url 'participant_detail' pk=participant.pk %}">{{ participant.full_name }}</a></li>
-        {% endfor %}
-    </uL>
-    <a href="{% url 'participant_add' %}">{% blocktrans %}Add Participant{% endblocktrans %}</a>
+    <div class="container">
+        <h2>{% blocktrans %}Participants{% endblocktrans %}</h2>
+        <table class="base-table">
+            <thead>
+                <tr>
+                    <th>
+                        {% blocktrans %}Participant Name{% endblocktrans %}
+                    </th>
+                    <th>
+                        {% blocktrans %}Sport{% endblocktrans %}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for participant in participant_list %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'participant_detail' pk=participant.pk %}">{{ participant.full_name }}</a>
+                        </td>
+                        <td>
+                            {{ participant.sport }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a class="button-add" href="{% url 'participant_add' %}">{% blocktrans %}Add Participant{% endblocktrans %}</a>
+    </div>
 {% endblock %}

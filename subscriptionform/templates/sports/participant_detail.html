@@ -2,20 +2,45 @@
 {% load i18n %}
 
 {% block content %}
-    <h2>{% blocktrans %}Participant information {% endblocktrans %}</h2>
-    <p>{% blocktrans %}First name:{% endblocktrans %} {{ participant.first_name }}</p>
-    <p>{% blocktrans %}Last name:{% endblocktrans %} {{ participant.last_name }}</p>
-    <p>{% blocktrans %}Date of birth:{% endblocktrans %} {{ participant.date_of_birth }}</p>
-    <p>{% blocktrans %}Wheelchair bound:{% endblocktrans %} {{ participant.wheelchair_bound }}</p>
-    <p>{% blocktrans %}Photos allowed?:{% endblocktrans %} {{ participant.photo_choice }}</p>
-    <p>{% blocktrans %}Dietary restrictions:{% endblocktrans %} {{ participant.food_preferences }}</p>
-    <p>{% blocktrans %}Participates in:{% endblocktrans %} {{ participant.sport }}</p>
+    <div class="container">
+        <h2>{% blocktrans %}Participant information {% endblocktrans %}</h2>
+            <table class="base-table">
+                <tbody>
+                    <tr>
+                        <td>{% blocktrans %}First name:{% endblocktrans %}</td>
+                        <td>{{ participant.first_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Last name:{% endblocktrans %}</td>
+                        <td>{{ participant.last_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Date of birth:{% endblocktrans %}</td>
+                        <td>{{ participant.date_of_birth }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Participates in:{% endblocktrans %}</td>
+                        <td>{{ participant.sport }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Wheelchair bound:{% endblocktrans %}</td>
+                        <td>{{ participant.wheelchair_bound }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Photos allowed?{% endblocktrans %}</td>
+                        <td>{{ participant.photo_choice }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Dietary restrictions:{% endblocktrans %}</td>
+                        <td>{{ participant.food_preferences }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <a href="{% url 'participant_update' pk=participant.pk %}">{% blocktrans %}Edit participant{% endblocktrans %}</a>
-    <br>
-    <a href="{% url 'participant_delete' pk=participant.pk %}">{% blocktrans %}Delete this participant{% endblocktrans %}</a>
-    <br>
-    <a href="{% url 'participant_add' %}">{% blocktrans %}Add another participant{% endblocktrans %}</a>
-    <br>
-    <a href="{% url 'participants' %}">{% blocktrans %}Return to participant list{% endblocktrans %}</a>
+
+    <a class="button-update" href="{% url 'participant_update' pk=participant.pk %}">{% blocktrans %}Edit participant{% endblocktrans %}</a>
+    <a class="button-delete" href="{% url 'participant_delete' pk=participant.pk %}">{% blocktrans %}Delete this participant{% endblocktrans %}</a>
+    <a class="button-add" href="{% url 'participant_add' %}">{% blocktrans %}Add another participant{% endblocktrans %}</a>
+    <a class="button-return" href="{% url 'participants' %}">{% blocktrans %}Return to participant list{% endblocktrans %}</a>
+    </div>
 {% endblock %}
