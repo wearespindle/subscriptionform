@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-18 13:42+0100\n"
+"POT-Creation-Date: 2016-11-22 13:30+0100\n"
 "PO-Revision-Date: 2016-09-30 11:30+0200\n"
 "Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,64 +45,76 @@ msgstr "telefoonnummer"
 msgid "email address"
 msgstr "emailadres"
 
-#: sports/models.py:14 users/models.py:12
+#: sports/forms.py:29
+msgid ""
+"Keep \"control\" or \"command\" on a Mac pressed to select multiple "
+"participants."
+msgstr "Houdt \"control\" of \"command\" op een Mac ingedrukt om "
+"meerdere deelnemers te selecteren."
+
+#: sports/models.py:15 users/models.py:12
 msgid "first name"
 msgstr "voornaam"
 
-#: sports/models.py:15 users/models.py:13
+#: sports/models.py:16 users/models.py:13
 msgid "last name"
 msgstr "achternaam"
 
-#: sports/models.py:16 users/models.py:15
+#: sports/models.py:17 users/models.py:15
 msgid "date of birth"
 msgstr "geboortedatum"
 
-#: sports/models.py:17
+#: sports/models.py:18
 msgid "wheelchair bound"
 msgstr "rolstoelgebonden"
 
-#: sports/models.py:18
+#: sports/models.py:19
 msgid "Photography allowed"
 msgstr "Fotograferen toegestaan"
 
-#: sports/models.py:23
+#: sports/models.py:24
 msgid "Participant"
 msgstr "Deelnemer"
 
-#: sports/models.py:43
+#: sports/models.py:44
 msgid "sport"
 msgstr "sport"
 
-#: sports/models.py:44
+#: sports/models.py:45
 msgid "description"
 msgstr "omschrijving"
 
-#: sports/models.py:47
+#: sports/models.py:48
 msgid "Sport"
 msgstr "Sport"
 
-#: sports/models.py:57
+#: sports/models.py:58
 msgid "detail_name"
 msgstr "detail_naam"
 
-#: sports/models.py:61
+#: sports/models.py:62
 msgid "Detail"
 msgstr "Detail"
 
-#: sports/models.py:74
+#: sports/models.py:75
 msgid "value"
 msgstr "waarde"
 
-#: sports/models.py:89
+#: sports/models.py:93
 msgid "Team"
 msgstr "Team"
 
+#: subscriptionform/templates/add_form.html:4
 #: subscriptionform/templates/home/index.html:4
 #: subscriptionform/templates/home/menu.html:5
-#: subscriptionform/templates/sports/participant_form.html:4
 #: subscriptionform/templates/users/myuser_form.html:4
 msgid "Welcome!"
 msgstr "Welkom!"
+
+#: subscriptionform/templates/confirm_delete.html:6
+#, python-format
+msgid "Are you sure you want to delete \"%(object)s\"?"
+msgstr "Weet u zeker dat u \"%(object)s\" wil verwijderen?"
 
 #: subscriptionform/templates/home/index.html:6
 msgid ""
@@ -134,18 +146,30 @@ msgid " If you are the event adminstrator, you can login "
 msgstr " Als u de administrator van het evenement bent, kunt u inloggen."
 
 #: subscriptionform/templates/home/menu.html:7
-#| msgid ""
-#| "If you want to update your private details, please click\n"
-#| "            <a href =\"%(the_url)s\">here</a>. "
+#, python-format
 msgid ""
 "If you want to go to your registered participants, or add a participant, "
 "click\n"
 "            <a href=\"%(participanturl)s\">here</a>."
 msgstr ""
-"Als u uw ingeschreven deelnemers wilt bekijken, of een deelnemer wilt inschrijven, klik \n"
+"Als u uw ingeschreven deelnemers wilt bekijken, of een deelnemer wilt "
+"inschrijven, klik \n"
 "           <a href =\"%(participanturl)s\">hier</a>. "
 
 #: subscriptionform/templates/home/menu.html:11
+#| msgid ""
+#| "If you want to go to your registered participants, or add a participant, "
+#| "click\n"
+#| "            <a href=\"%(participanturl)s\">here</a>."
+msgid ""
+"For an overview of your registerd teams, or to create a team, click\n"
+"            <a href=\"%(teamurl)s\">here</a>."
+msgstr ""
+"Als u uw geregistreerde teams wilt bekijken, of een team wilt "
+"toevoegen, klik \n"
+"           <a href =\"%(teamurl)s\">hier</a>. "
+
+#: subscriptionform/templates/home/menu.html:15
 #, python-format
 msgid ""
 "If you want to update your private details, please click\n"
@@ -224,11 +248,6 @@ msgstr ""
 "Vul uw emailadres in zodat we u de link kunnen sturen waarmee u uw "
 "wachtwoord kunt resetten."
 
-#: subscriptionform/templates/sports/participant_confirm_delete.html:6
-#, python-format
-msgid "Are you sure you want to delete \"%(object)s\"?"
-msgstr "Weet u zeker dat u \"%(object)s\" wil verwijderen?"
-
 #: subscriptionform/templates/sports/participant_detail.html:5
 msgid "Participant information "
 msgstr "Deelnemersinformatie"
@@ -262,14 +281,21 @@ msgid "Participates in:"
 msgstr "Neemt deel aan:"
 
 #: subscriptionform/templates/sports/participant_detail.html:14
-msgid "Edit Participant"
-msgstr "Deelnemer toevoegen"
+#| msgid "Edit Participant"
+msgid "Edit participant"
+msgstr "Deelnemer wijzigen"
 
 #: subscriptionform/templates/sports/participant_detail.html:16
-msgid "Delete Participant"
-msgstr "Deelnemer verwijderen"
+#| msgid "Delete Participant"
+msgid "Delete this participant"
+msgstr "Deze deelnemer verwijderen"
 
 #: subscriptionform/templates/sports/participant_detail.html:18
+#| msgid "Add Participant"
+msgid "Add another participant"
+msgstr "Nog een deelnemer toevoegen"
+
+#: subscriptionform/templates/sports/participant_detail.html:20
 msgid "Return to participant list"
 msgstr "Ga terug naar deelnemersoverzicht"
 
@@ -280,6 +306,44 @@ msgstr "Deelnemers"
 #: subscriptionform/templates/sports/participant_list.html:11
 msgid "Add Participant"
 msgstr "Deelnemer toevoegen"
+
+#: subscriptionform/templates/sports/team_detail.html:5
+#| msgid "Participant information "
+msgid "Team information"
+msgstr "Teaminformatie"
+
+#: subscriptionform/templates/sports/team_detail.html:6
+#| msgid "Last name:"
+msgid "Team name:"
+msgstr "Team naam:"
+
+#: subscriptionform/templates/sports/team_detail.html:7
+msgid "Team members:"
+msgstr "Teamleden"
+
+#: subscriptionform/templates/sports/team_detail.html:16
+#| msgid "Team"
+msgid "Edit Team"
+msgstr "Team aanpassen"
+
+#: subscriptionform/templates/sports/team_detail.html:18
+msgid "Delete Team"
+msgstr "Team verwijderen"
+
+#: subscriptionform/templates/sports/team_detail.html:20
+#| msgid "Return to participant list"
+msgid "Return to team list"
+msgstr "Ga terug naar teamoverzicht"
+
+#: subscriptionform/templates/sports/team_list.html:5
+#| msgid "Team"
+msgid "Teams"
+msgstr "Teams"
+
+#: subscriptionform/templates/sports/team_list.html:11
+#| msgid "Team"
+msgid "Add Team"
+msgstr "Team toevoegen"
 
 #: subscriptionform/templates/users/myuser_form.html:6
 msgid "Update your personal details."
