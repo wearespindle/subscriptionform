@@ -4,8 +4,8 @@ from .models import Participant, Sport, SportDetail, Detail, Team
 
 @admin.register(Participant)
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'sport')
-    list_filter = ('sport', 'wheelchair_bound',)
+    list_display = ('first_name', 'last_name', 'club', 'sport')
+    list_filter = ('sport', 'club', 'wheelchair_bound',)
 
 
 @admin.register(Sport)
