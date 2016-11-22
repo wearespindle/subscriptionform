@@ -20,14 +20,15 @@
             <a href="{% url 'logout' %}">{% blocktrans %}Logout{% endblocktrans %}</a>
             <br>
             <a href="{% url 'menu' %}">Menu</a>
+            <br>
+            <a href="{% url 'user_update' %}">{% blocktrans %}Personal Details{% endblocktrans %}</a>
         {% endblock %}
     {% endif %}
 </div>
 
-<div id="container">
-    {% block content %}
-    {% endblock %}
-</div>
+
+{% block content %}
+{% endblock %}
 
 </body>
 </html>
