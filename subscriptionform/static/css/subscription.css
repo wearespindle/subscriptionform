@@ -1,13 +1,26 @@
+#header {
+    background-color: #d4145a;
+    text-align: right;
+}
+
+#header a {
+    color: white;
+    padding-right: 20px;
+}
+
 h2 {
     color: #5f5d8a;
 }
 
 body {
-    padding-left: 15px;
     background-color: #c6e7ff;
 }
 
 p {
     font-family: allerta, Arial, "Helvetica Neue", Helvetica, "sans-serif";
     text-align: left;
+}
+
+#container {
+    padding-left: 15px;
 }

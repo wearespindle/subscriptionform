@@ -11,9 +11,11 @@
     <p>{% blocktrans %}Dietary restrictions:{% endblocktrans %} {{ participant.food_preferences }}</p>
     <p>{% blocktrans %}Participates in:{% endblocktrans %} {{ participant.sport }}</p>
 
-    <a href="{% url 'participant_update' pk=participant.pk %}">{% blocktrans %}Edit Participant{% endblocktrans %}</a>
+    <a href="{% url 'participant_update' pk=participant.pk %}">{% blocktrans %}Edit participant{% endblocktrans %}</a>
     <br>
-    <a href="{% url 'participant_delete' pk=participant.pk %}">{% blocktrans %}Delete Participant{% endblocktrans %}</a>
+    <a href="{% url 'participant_delete' pk=participant.pk %}">{% blocktrans %}Delete this participant{% endblocktrans %}</a>
+    <br>
+    <a href="{% url 'participant_add' %}">{% blocktrans %}Add another participant{% endblocktrans %}</a>
     <br>
     <a href="{% url 'participants' %}">{% blocktrans %}Return to participant list{% endblocktrans %}</a>
 {% endblock %}
