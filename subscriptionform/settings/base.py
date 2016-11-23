@@ -61,6 +61,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'subscriptionform.middleware.LoginRequiredMiddleware',
     'club.middleware.ClubMiddleware',
 )
 
@@ -116,6 +117,14 @@ LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+LOGIN_EXEMPT_URLS = (
+    r'^$',
+    r'^password_reset',
+    r'^password_reset_done',
+    r'^reset',
+    r'^admin',
+)
 
 # Additional locations of static files
 STATICFILES_DIRS = (
