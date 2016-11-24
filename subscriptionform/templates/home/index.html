@@ -29,7 +29,9 @@
 {#        login credentials yet, please contact the organization.{% endblocktrans %}</p>#}
 {#        <p>{% blocktrans %} If you are the event adminstrator, you can login {% endblocktrans %}<a href="{% url 'admin:index' %}">here.</a></p>#}
     </div>
-    <div class="footer">
-        <a class="button-admin" href="{% url 'admin:index' %}">{% blocktrans %}Admin{% endblocktrans %}</a>
-    </div>
+    {% block footer %}
+        <div class="footer">
+            <a class="button-admin" href="{% url 'admin:index' %}">{% blocktrans %}Admin{% endblocktrans %}</a>
+        </div>
+    {% endblock %}
 {% endblock %}
