@@ -74,6 +74,9 @@ class SportDetail(models.Model):
     detail = models.ForeignKey(Detail, blank=True)
     value = models.CharField(_('value'), max_length=20)
 
+    def __str__(self):
+        return str(self.detail)
+
 
 class Team(ClubMixin):
     """
