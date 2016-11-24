@@ -3,10 +3,11 @@
 
 {% block title %}{% trans 'Welcome!' %}{% endblock %}
 {% block content %}
-    <form method="POST" class="add-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
-
+    <div class="container">
+        <form method="POST" class="add-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+    </div>
 {% endblock %}
