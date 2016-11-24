@@ -204,4 +204,7 @@ p {
     background: #0071bc;
     height: 50px;
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
