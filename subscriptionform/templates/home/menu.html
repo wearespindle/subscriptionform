@@ -18,6 +18,10 @@
                 {% url 'teams' as teamurl %}
                 {% blocktrans %}<a class="menu-navigation-link" href="{{ teamurl }}">Teams</a>{% endblocktrans %}
             </li>
+             <li class="menu-navigation-item">
+                {% url 'coaches' as coachurl %}
+                {% blocktrans %}<a class="menu-navigation-link" href="{{ coachurl }}">Coaches</a>{% endblocktrans %}
+            </li>
         </ul>
         {% if messages %}
             <ul class="messages">
