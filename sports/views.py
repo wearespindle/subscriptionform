@@ -1,8 +1,8 @@
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 from django.urls import reverse_lazy
 
-from .forms import ParticipantForm, TeamForm
-from .models import Participant, Team
+from .forms import CoachForm, ParticipantForm, TeamForm
+from .models import Coach, Participant, Team
 
 
 class ParticipantList(ListView):
@@ -54,4 +54,30 @@ class TeamUpdate(UpdateView):
 class TeamDelete(DeleteView):
     model = Team
     success_url = reverse_lazy('teams')
+    template_name = 'confirm_delete.html'
+
+
+class CoachList(ListView):
+    model = Coach
+
+
+class CoachDetail(DetailView):
+    model = Coach
+
+
+class CoachCreate(CreateView):
+    model = Coach
+    form_class = CoachForm
+    template_name = 'add_form.html'
+
+
+class CoachUpdate(UpdateView):
+    model = Coach
+    form_class = CoachForm
+    template_name = 'add_form.html'
+
+
+class CoachDelete(DeleteView):
+    model = Coach
+    success_url = reverse_lazy('coaches')
     template_name = 'confirm_delete.html'

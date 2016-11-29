@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
+from phonenumber_field.modelfields import PhoneNumberField
 
 from club.models import Club, ClubMixin
 from users.models import MyUser, Person
@@ -12,9 +13,6 @@ class Participant(Person):
     by extending the Person class and assigns them to a sport and sport detail. Participants are
     automatically assigned to the Club to which the User that registered them belongs.
     """
-    first_name = models.CharField(_('first name'), max_length=50)
-    last_name = models.CharField(_('last name'), max_length=50)
-    date_of_birth = models.DateField(_('date of birth'))
     wheelchair_bound = models.BooleanField(_('wheelchair bound'), default=False)
     photo_choice = models.BooleanField(_('Photography allowed'), default=True)
     sport = models.ForeignKey('Sport')
@@ -27,7 +25,7 @@ class Participant(Person):
         return self.first_name + " " + self.last_name
 
     def _full_name(self):
-        return '%s %s' % (self.first_name, self.last_name)
+        return '%s %s %s' % (self.first_name, self.prefix, self.last_name)
     full_name = property(_full_name)
 
     def __str__(self):
@@ -35,6 +33,32 @@ class Participant(Person):
 
     def get_absolute_url(self):
         return reverse('participant_detail', kwargs={'pk': self.pk})
+
+
+class Coach(Person):
+    phone_number = PhoneNumberField(_('phonenumber'), default='+31')
+    email = models.EmailField(
+        verbose_name=_('email address'),
+        max_length=255,
+        unique=True,
+    )
+
+    class Meta:
+        verbose_name = _('Coach')
+        verbose_name_plural = _('Coaches')
+
+    def get_full_name(self):
+        return self.first_name + " " + self.prefix + " " + self.last_name
+
+    def _full_name(self):
+        return '%s %s %s' % (self.first_name, self.prefix, self.last_name)
+    full_name = property(_full_name)
+
+    def __str__(self):
+        return self.get_full_name()
+
+    def get_absolute_url(self):
+        return reverse('coach_detail', kwargs={'pk': self.pk})
 
 
 class Sport(models.Model):
