@@ -4,7 +4,7 @@ from django.urls import reverse
 from phonenumber_field.modelfields import PhoneNumberField
 
 from club.models import Club, ClubMixin
-from users.models import MyUser, Person
+from users.models import Person
 
 
 class Participant(Person):
@@ -15,8 +15,7 @@ class Participant(Person):
     """
     wheelchair_bound = models.BooleanField(_('wheelchair bound'), default=False)
     photo_choice = models.BooleanField(_('Photography allowed'), default=True)
-    sport = models.ForeignKey('Sport')
-    sport_details = models.ManyToManyField('SportDetail', blank=True)
+    disciplines = models.ManyToManyField('Discipline', through='Performance')
 
     class Meta:
         verbose_name = _('Participant')
@@ -75,31 +74,37 @@ class Sport(models.Model):
         return self.name
 
 
-class Detail(models.Model):
+class Discipline(models.Model):
     """
-    Detail is a model for the individual details.
+    A discipline is well, a discipline of a Sport that will be played during
+    the event, for example the '50m sprint'.
     """
-    name_of_detail = models.CharField(_('detail_name'), max_length=30)
-    sport = models.ManyToManyField(Sport, through='SportDetail')
+    name_of_discipline = models.CharField(_('discipline'), max_length=30)
+    sport = models.ForeignKey(Sport)
+    eventcode = models.CharField(max_length=12)
 
     class Meta:
-        verbose_name = _('Detail')
+        verbose_name = _('Discipline')
 
     def __str__(self):
-        return self.name_of_detail
+        return self.name_of_discipline
 
 
-class SportDetail(models.Model):
+class Performance(models.Model):
     """
-    SportDetail is an intermediate model between the Sport and Detail models.
-    It can be a time, weight class, personal record etc.
+    Intermediary model between a Participant and a Discipline, used to register a score, time,
+    or other qualification.
     """
-    sport = models.ForeignKey(Sport)
-    detail = models.ForeignKey(Detail, blank=True)
-    value = models.CharField(_('value'), max_length=20)
+    discipline = models.ForeignKey(Discipline)
+    participant = models.ForeignKey(Participant)
+    qualification = models.CharField(_('qualification'), max_length=10, null=True)
+
+    class Meta:
+        # Makes sure a participant can only partake in a certain discipline once
+        unique_together = ('discipline', 'participant',)
 
     def __str__(self):
-        return str(self.detail)
+        return str(self.qualification)
 
 
 class Team(ClubMixin):
