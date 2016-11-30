@@ -98,6 +98,21 @@ p {
     color: white;
 }
 
+.menu-navigation-item:nth-child(3) .menu-navigation-link {
+    margin-right: 0;
+    background: #f7931e;
+}
+
+.menu-navigation-item:nth-child(3) .menu-navigation-link:hover {
+    background: #FFC028;
+    text-decoration: none;
+}
+
+.menu-navigation-item:nth-child(3) .menu-navigation-link:active,
+.menu-navigation-item:nth-child(3) .menu-navigation-link:visited {
+    color: white;
+}
+
 .header-image {
     height: 390px;
     width: 100%;

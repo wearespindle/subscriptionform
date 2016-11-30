@@ -1,11 +1,17 @@
 from django.contrib import admin
-from .models import Participant, Sport, SportDetail, Detail, Team
+
+from .models import Coach, Participant, Sport, SportDetail, Detail, Team
 
 
 @admin.register(Participant)
 class ParticipantAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'club', 'sport')
     list_filter = ('sport', 'club', 'wheelchair_bound',)
+
+
+@admin.register(Coach)
+class MyCoachAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'club')
 
 
 @admin.register(Sport)

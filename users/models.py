@@ -45,7 +45,18 @@ class MyUser(ClubMixin, PermissionsMixin, AbstractBaseUser):
         verbose_name = _('User')
 
 
+GENDER_CHOICES = (
+    ('Male', 'Male'),
+    ('Female', 'Female'),
+)
+
+
 class Person(ClubMixin):
+    first_name = models.CharField(_('first name'), max_length=50)
+    prefix = models.CharField(_('prefix'), max_length=10, blank=True)
+    last_name = models.CharField(_('last name'), max_length=50)
+    date_of_birth = models.DateField(_('date of birth'))
+    gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
     food_preferences = models.CharField(max_length=255, blank=True)
 
     class Meta:
