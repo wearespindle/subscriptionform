@@ -2,7 +2,7 @@ db:
   image: mariadb:latest
   ports:
     # ext:int port.
-    - "3306:3306"
+    - "3302:3306"
   environment:
     # This is obviously not a safe configuration usage in production.
     - MYSQL_DATABASE=subscriptionform
