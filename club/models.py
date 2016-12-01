@@ -39,7 +39,7 @@ class Club(models.Model):
 class ClubMixin(models.Model):
     # Automatically filter any queryset by club if logged in.
     objects = ClubManager()
-    club = models.ForeignKey(Club, blank=True)
+    club = models.ForeignKey(Club, null=True)
 
     def save(self, *args, **kwargs):
         user = get_current_user()
