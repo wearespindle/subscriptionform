@@ -1,12 +1,11 @@
 from django.contrib import admin
-
-from .models import Coach, Participant, Sport, SportDetail, Detail, Team
+from .models import Coach, Participant, Sport, Team, Discipline, Performance
 
 
 @admin.register(Participant)
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'club', 'sport')
-    list_filter = ('sport', 'club', 'wheelchair_bound',)
+    list_display = ('first_name', 'last_name', 'club',)
+    list_filter = ('disciplines', 'club', 'wheelchair_bound',)
 
 
 @admin.register(Coach)
@@ -19,16 +18,16 @@ class SportAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 
-@admin.register(SportDetail)
-class SportDetailAdmin(admin.ModelAdmin):
-    list_display = ('detail', 'sport',)
-
-
-@admin.register(Detail)
-class DetailAdmin(admin.ModelAdmin):
-    list_display = ('name_of_detail',)
-
-
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ('team_name', 'club',)
+
+
+@admin.register(Discipline)
+class DisciplineAdmin(admin.ModelAdmin):
+    list_display = ('name_of_discipline', 'eventcode', 'sport',)
+
+
+@admin.register(Performance)
+class PerformanceAdmin(admin.ModelAdmin):
+    list_display = ('discipline', 'participant', 'qualification',)

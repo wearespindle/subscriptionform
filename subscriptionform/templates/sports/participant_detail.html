@@ -24,7 +24,10 @@
                     </tr>
                     <tr>
                         <td>{% blocktrans %}Participates in:{% endblocktrans %}</td>
-                        <td>{{ participant.sport }}</td>
+                        <td>{% for performance in participant.performance_set.all %}
+                            {{ performance.discipline }}: {{ performance.qualification }}
+                            {% endfor %}
+                        </td>
                     </tr>
                     <tr>
                         <td>{% blocktrans %}Wheelchair bound:{% endblocktrans %}</td>
