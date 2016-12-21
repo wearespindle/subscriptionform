@@ -21,7 +21,7 @@ class ParticipantCreate(CreateView):
     form_class = ParticipantForm
     template_name = 'multiple_add_forms.html'
     success_url = reverse_lazy('participants')
-    performance_formset = modelformset_factory(Performance, form=PerformanceForm, extra=0)
+    performance_formset = modelformset_factory(Performance, form=PerformanceForm, extra=1)
 
     def get(self, request, *args, **kwargs):
         """

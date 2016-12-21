@@ -11,7 +11,7 @@
                         {% blocktrans %}Participant Name{% endblocktrans %}
                     </th>
                     <th>
-                        {% blocktrans %}Sport{% endblocktrans %}
+                        {% blocktrans %}Discipline{% endblocktrans %}
                     </th>
                 </tr>
             </thead>
@@ -21,8 +21,9 @@
                         <td>
                             <a href="{% url 'participant_detail' pk=participant.pk %}">{{ participant.full_name }}</a>
                         </td>
-                        <td>
-                            {{ participant.sport }}
+                        <td>{% for performance in participant.performance_set.all %}
+                            <li>{{ performance.discipline }}</li>
+                            {% endfor %}
                         </td>
                     </tr>
                 {% endfor %}

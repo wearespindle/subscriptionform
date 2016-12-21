@@ -25,17 +25,17 @@
                     <tr>
                         <td>{% blocktrans %}Participates in:{% endblocktrans %}</td>
                         <td>{% for performance in participant.performance_set.all %}
-                            {{ performance.discipline }}: {{ performance.qualification }}
+                            <li>{{ performance.discipline }}: {{ performance.qualification }}</li>
                             {% endfor %}
                         </td>
                     </tr>
                     <tr>
                         <td>{% blocktrans %}Wheelchair bound:{% endblocktrans %}</td>
-                        <td>{{ participant.wheelchair_bound }}</td>
+                        <td>{{ participant.wheelchair_bound|yesno }}</td>
                     </tr>
                     <tr>
                         <td>{% blocktrans %}Photos allowed?{% endblocktrans %}</td>
-                        <td>{{ participant.photo_choice }}</td>
+                        <td>{{ participant.photo_choice|yesno }}</td>
                     </tr>
                     <tr>
                         <td>{% blocktrans %}Dietary restrictions:{% endblocktrans %}</td>
