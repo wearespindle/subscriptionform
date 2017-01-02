@@ -1,0 +1,15 @@
+{% extends 'add_form.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST" class="add-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ performance_form.as_p }}
+            <button type="submit">Save</button>
+            <br>
+            <a href="{% url 'performance_delete' pk=performance.participant.pk performance_pk=performance.pk %}">{% blocktrans %}Delete this performance{% endblocktrans %}</a>
+        </form>
+    </div>
+{% endblock %}

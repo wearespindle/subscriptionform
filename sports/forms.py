@@ -41,7 +41,7 @@ class PerformanceForm(forms.ModelForm):
 
     class Meta:
         model = Performance
-        fields = ('discipline', 'qualification',)
+        fields = ('participant', 'discipline', 'qualification',)
 
 
 class DisciplineForm(forms.ModelForm):

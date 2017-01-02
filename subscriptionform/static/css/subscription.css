@@ -215,6 +215,11 @@ p {
     float: right;
 }
 
+.glyphicon-plus {
+    color: #d4145a;
+    font-size: 35px;
+}
+
 .footer {
     background: #0071bc;
     height: 50px;

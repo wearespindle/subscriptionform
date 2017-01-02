@@ -25,8 +25,9 @@
                     <tr>
                         <td>{% blocktrans %}Participates in:{% endblocktrans %}</td>
                         <td>{% for performance in participant.performance_set.all %}
-                            <li>{{ performance.discipline }}: {{ performance.qualification }}</li>
+                            <li><a href="{% url 'performance_update' pk=participant.pk performance_pk=performance.pk %}">{{ performance.discipline }}: {{ performance.qualification }}</a></li>
                             {% endfor %}
+                            <a href ="{% url 'performance_add' pk=participant.pk %}"><span class="glyphicon glyphicon-plus"></span></a>
                         </td>
                     </tr>
                     <tr>
