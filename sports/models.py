@@ -106,6 +106,9 @@ class Performance(models.Model):
     def __str__(self):
         return str(self.qualification)
 
+    def get_absolute_url(self):
+        return reverse('participant_detail', kwargs={'pk':self.pk})
+
 
 class Team(ClubMixin):
     """
