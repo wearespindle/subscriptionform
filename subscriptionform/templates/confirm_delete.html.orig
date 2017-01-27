@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<<<<<<< HEAD
+    <form action="" method="post">{% csrf_token %}
+    <p>{% blocktrans %}Are you sure you want to delete "{{ object }}"?{% endblocktrans %}</p>
+    <input type="submit" value="Confirm" />
+</form>
+
+=======
+    <div class="container">
+        <form action="" method="post">{% csrf_token %}
+        <p>{% blocktrans %}Are you sure you want to delete "{{ object }}"?{% endblocktrans %}</p>
+        <input type="submit" value="Confirm" />
+        </form>
+    </div>
+>>>>>>> 5e07bb2... Small styling stuff
+{% endblock %}
