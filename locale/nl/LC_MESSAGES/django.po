@@ -1,0 +1,458 @@
+# Dutch Translation File
+# Copyright (C) 2016 DevHouse Spindle.
+# This file is distributed under the same license as the Subscriptionform.
+# FIRST AUTHOR <rosien@wearespindle.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-27 10:14+0100\n"
+"PO-Revision-Date: 2016-09-30 11:30+0200\n"
+"Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: club/models.py:27
+msgid "name"
+msgstr "naam"
+
+#: club/models.py:28
+msgid "street"
+msgstr "straat"
+
+#: club/models.py:29
+msgid "number"
+msgstr "nummer"
+
+#: club/models.py:30
+msgid "zipcode"
+msgstr "postcode"
+
+#: club/models.py:31
+msgid "city"
+msgstr "stad"
+
+#: club/models.py:32 sports/models.py:38
+msgid "phonenumber"
+msgstr "telefoonnummer"
+
+#: club/models.py:33 sports/models.py:40 users/models.py:17
+msgid "email address"
+msgstr "emailadres"
+
+#: sports/forms.py:29
+msgid ""
+"Keep \"control\" or \"command\" on a Mac pressed to select multiple "
+"participants."
+msgstr ""
+"Houdt \"control\" of \"command\" op een Mac ingedrukt om meerdere deelnemers "
+"te selecteren."
+
+#: sports/models.py:16
+msgid "wheelchair bound"
+msgstr "rolstoelgebonden"
+
+#: sports/models.py:17
+msgid "Photography allowed"
+msgstr "Fotograferen toegestaan"
+
+#: sports/models.py:21
+msgid "Participant"
+msgstr "Deelnemer"
+
+#: sports/models.py:46
+msgid "Coach"
+msgstr "Coach"
+
+#: sports/models.py:47 subscriptionform/templates/sports/coach_list.html:6
+msgid "Coaches"
+msgstr "Coaches"
+
+#: sports/models.py:67
+msgid "sport"
+msgstr "sport"
+
+#: sports/models.py:68
+msgid "description"
+msgstr "omschrijving"
+
+#: sports/models.py:71
+msgid "Sport"
+msgstr "Sport"
+
+#: sports/models.py:82
+msgid "discipline"
+msgstr "discipline"
+
+#: sports/models.py:87
+#: subscriptionform/templates/sports/participant_list.html:14
+msgid "Discipline"
+msgstr "Discipline"
+
+#: sports/models.py:100
+msgid "qualification"
+msgstr "kwalificatie"
+
+#: sports/models.py:128
+msgid "Team"
+msgstr "Team"
+
+#: subscriptionform/templates/add_form.html:4
+#: subscriptionform/templates/home/index.html:4
+#: subscriptionform/templates/multiple_add_forms.html:4
+#: subscriptionform/templates/users/myuser_form.html:4
+msgid "Welcome!"
+msgstr "Welkom!"
+
+#: subscriptionform/templates/base.html:20
+msgid "Logout"
+msgstr "Logout"
+
+#: subscriptionform/templates/base.html:24
+msgid "Personal Details"
+msgstr "Persoonlijke Gegevens"
+
+#: subscriptionform/templates/confirm_delete.html:7
+#, python-format
+msgid "Are you sure you want to delete \"%(object)s\"?"
+msgstr "Weet u zeker dat u \"%(object)s\" wil verwijderen?"
+
+#: subscriptionform/templates/edit_performance_form.html:12
+#| msgid "Delete this participant"
+msgid "Delete this performance"
+msgstr "Prestatie verwijderen"
+
+#: subscriptionform/templates/home/index.html:14
+#, python-format
+msgid ""
+"<a class=\"menu-navigation-link\" href=\"%(loginurl)s\">Login Coaches</a>"
+msgstr ""
+"<a class=\"menu-navigation-link\" href=\"%(loginurl)s\">Login Coaches</a>"
+
+#: subscriptionform/templates/home/index.html:17
+msgid ""
+"\n"
+"                    <a class=\"menu-navigation-link\" href=\"http://"
+"specialolympicsgroningen.debrugprovinciegroningen.nl/organisatie-en-contact."
+"html\">\n"
+"                        Contact</a>\n"
+"                "
+msgstr ""
+"\n"
+"                    <a class=\"menu-navigation-link\" href=\"http://"
+"specialolympicsgroningen.debrugprovinciegroningen.nl/organisatie-en-contact."
+"html\">\n"
+"                        Contact</a>\n"
+"                "
+
+#: subscriptionform/templates/home/index.html:34
+msgid "Admin"
+msgstr "Admin"
+
+#: subscriptionform/templates/home/menu.html:15
+#, python-format
+msgid ""
+"<a class=\"menu-navigation-link\" href=\"%(participanturl)s\">Participants</"
+"a>"
+msgstr ""
+"<a class=\"menu-navigation-link\" href=\"%(participanturl)s\">Deelnemers</a>"
+
+#: subscriptionform/templates/home/menu.html:19
+#, python-format
+msgid "<a class=\"menu-navigation-link\" href=\"%(teamurl)s\">Teams</a>"
+msgstr "<a class=\"menu-navigation-link\" href=\"%(teamurl)s\">Teams</a>"
+
+#: subscriptionform/templates/home/menu.html:23
+#, python-format
+#| msgid ""
+#| "<a class=\"menu-navigation-link\" href=\"%(loginurl)s\">Login Coaches</a>"
+msgid "<a class=\"menu-navigation-link\" href=\"%(coachurl)s\">Coaches</a>"
+msgstr ""
+"<a class=\"menu-navigation-link\" href=\"%(coachurl)s\">Login Coaches</a>"
+
+#: subscriptionform/templates/registration/login.html:9
+msgid " Your username and password didn't match. Please try again. "
+msgstr ""
+" Uw gebruikersnaam en wachtwoord komen niet overeen. Probeer het alstublieft "
+"nog een keer."
+
+#: subscriptionform/templates/registration/login.html:14
+msgid ""
+" Your account doesn't have access to this page. To proceed,\n"
+"                please login with an account that has access. "
+msgstr ""
+" Uw account heeft geen toegang tot deze pagina. Om verder te gaan, \n"
+"        log alstublieft in."
+
+#: subscriptionform/templates/registration/login.html:17
+msgid "Please login to see this page."
+msgstr "Log alstublieft in om deze pagina te bekijken."
+
+#: subscriptionform/templates/registration/login.html:38
+msgid "I forgot my password."
+msgstr "Ik ben mijn wachtwoord vergeten."
+
+#: subscriptionform/templates/registration/password_reset_complete.html:4
+msgid "Your password has been successfully reset."
+msgstr "Uw wachtwoord is gereset."
+
+#: subscriptionform/templates/registration/password_reset_confirm.html:3
+#: subscriptionform/templates/registration/password_reset_form.html:4
+msgid "Reset Password"
+msgstr "Reset Wachtwoord"
+
+#: subscriptionform/templates/registration/password_reset_confirm.html:13
+msgid ""
+" This reset link is no longer valid.\n"
+"            Please request a new password reset."
+msgstr ""
+" De reset link is niet meer geldig. \n"
+"            Vraag alstublieft een nieuwe wachtwoord reset aan."
+
+#: subscriptionform/templates/registration/password_reset_done.html:5
+msgid ""
+"Please check your email and follow the instructions to reset your password.\n"
+"    If you don't receive an email, please make sure you have entered the "
+"address you registerd\n"
+"    with and check your spam folder."
+msgstr ""
+"Controleer uw email en volg de instructies om uw wachtwoord te resetten. \n"
+"Als u geen email heeft ontvangen, controleer dan of u het juiste "
+"emailadres \n"
+"heeft ingevuld en controleer uw spam berichten."
+
+#: subscriptionform/templates/registration/password_reset_email.html:3
+#, python-format
+msgid ""
+"Someone asked for password reset for email %(email)s. Follow the link "
+"below:\n"
+"%(protocol)s://%(domain)s"
+msgstr ""
+"Iemand heeft om het resetten van het wachtwoord van email %(email)s "
+"gevraagd. Volg onderstaande link: \n"
+"%(protocol)s://%(domain)s"
+
+#: subscriptionform/templates/registration/password_reset_form.html:7
+msgid ""
+" Please enter your email below so we can send you a link to reset your "
+"password."
+msgstr ""
+"Vul uw emailadres in zodat we u de link kunnen sturen waarmee u uw "
+"wachtwoord kunt resetten."
+
+#: subscriptionform/templates/sports/coach_detail.html:6
+#| msgid "Team information"
+msgid "Coach information"
+msgstr "Coach informatie"
+
+#: subscriptionform/templates/sports/coach_detail.html:10
+#: subscriptionform/templates/sports/participant_detail.html:10
+msgid "First name:"
+msgstr "Voornaam"
+
+#: subscriptionform/templates/sports/coach_detail.html:14
+#: subscriptionform/templates/sports/participant_detail.html:14
+msgid "Prefix:"
+msgstr "Voorzetsel"
+
+#: subscriptionform/templates/sports/coach_detail.html:18
+#: subscriptionform/templates/sports/participant_detail.html:18
+msgid "Last name:"
+msgstr "Achternaam"
+
+#: subscriptionform/templates/sports/coach_detail.html:22
+#: subscriptionform/templates/sports/participant_detail.html:22
+msgid "Date of birth:"
+msgstr "geboortedatum"
+
+#: subscriptionform/templates/sports/coach_detail.html:26
+msgid "Gender:"
+msgstr "Geslacht"
+
+#: subscriptionform/templates/sports/coach_detail.html:30
+#| msgid "phonenumber"
+msgid "Phone number:"
+msgstr "Telefoonnummer"
+
+#: subscriptionform/templates/sports/coach_detail.html:34
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#: subscriptionform/templates/sports/coach_detail.html:38
+#: subscriptionform/templates/sports/participant_detail.html:42
+msgid "Dietary restrictions:"
+msgstr "Dieetbeperkingen"
+
+#: subscriptionform/templates/sports/coach_detail.html:44
+#| msgid "Edit Team"
+msgid "Edit coach"
+msgstr "Coach aanpassen"
+
+#: subscriptionform/templates/sports/coach_detail.html:45
+#| msgid "Delete this participant"
+msgid "Delete this coach"
+msgstr "Coach verwijderen"
+
+#: subscriptionform/templates/sports/coach_detail.html:46
+#| msgid "Add another participant"
+msgid "Add another coach"
+msgstr "Nog een cooach toevoegen"
+
+#: subscriptionform/templates/sports/coach_detail.html:47
+#| msgid "Return to team list"
+msgid "Return to coach list"
+msgstr "Ga terug naar coachoverzicht"
+
+#: subscriptionform/templates/sports/coach_list.html:11
+#| msgid "Team Name"
+msgid "Coach Name"
+msgstr "Naam Coach"
+
+#: subscriptionform/templates/sports/coach_list.html:26
+msgid "Add Coach"
+msgstr "Coach Toevoegen"
+
+#: subscriptionform/templates/sports/participant_detail.html:6
+msgid "Participant information"
+msgstr "Deelnemersinformatie"
+
+#: subscriptionform/templates/sports/participant_detail.html:26
+msgid "Participates in:"
+msgstr "Neemt deel aan:"
+
+#: subscriptionform/templates/sports/participant_detail.html:34
+msgid "Wheelchair bound:"
+msgstr "Rolstoelgebonden"
+
+#: subscriptionform/templates/sports/participant_detail.html:38
+msgid "Photos allowed?"
+msgstr "Fotograferen toegestaan?"
+
+#: subscriptionform/templates/sports/participant_detail.html:49
+msgid "Edit participant"
+msgstr "Deelnemer wijzigen"
+
+#: subscriptionform/templates/sports/participant_detail.html:50
+msgid "Delete this participant"
+msgstr "Deelnemer verwijderen"
+
+#: subscriptionform/templates/sports/participant_detail.html:51
+msgid "Add another participant"
+msgstr "Deelnemer toevoegen"
+
+#: subscriptionform/templates/sports/participant_detail.html:52
+msgid "Return to participant list"
+msgstr "Terug naar deelnemersoverzicht"
+
+#: subscriptionform/templates/sports/participant_list.html:6
+msgid "Participants"
+msgstr "Deelnemers"
+
+#: subscriptionform/templates/sports/participant_list.html:11
+msgid "Participant Name"
+msgstr "Deelnemer"
+
+#: subscriptionform/templates/sports/participant_list.html:33
+msgid "Add Participant"
+msgstr "Deelnemer toevoegen"
+
+#: subscriptionform/templates/sports/team_detail.html:6
+msgid "Team information"
+msgstr "Teaminformatie"
+
+#: subscriptionform/templates/sports/team_detail.html:10
+msgid "Team name:"
+msgstr "Teamnaam:"
+
+#: subscriptionform/templates/sports/team_detail.html:14
+msgid "Team members:"
+msgstr "Teamleden:"
+
+#: subscriptionform/templates/sports/team_detail.html:25
+msgid "Edit Team"
+msgstr "Team aanpassen"
+
+#: subscriptionform/templates/sports/team_detail.html:27
+msgid "Delete Team"
+msgstr "Team verwijderen"
+
+#: subscriptionform/templates/sports/team_detail.html:29
+msgid "Return to team list"
+msgstr "Ga terug naar teamoverzicht"
+
+#: subscriptionform/templates/sports/team_list.html:6
+msgid "Teams"
+msgstr "Teams"
+
+#: subscriptionform/templates/sports/team_list.html:11
+msgid "Team Name"
+msgstr "Team naam:"
+
+#: subscriptionform/templates/sports/team_list.html:14
+msgid "Team Size"
+msgstr "Teamgrootte:"
+
+#: subscriptionform/templates/sports/team_list.html:32
+msgid "Add Team"
+msgstr "Team toevoegen"
+
+#: subscriptionform/templates/users/myuser_form.html:6
+msgid "Update your personal details."
+msgstr "Wijzig uw persoonlijke gegevens."
+
+#: users/models.py:12 users/models.py:55
+msgid "first name"
+msgstr "voornaam"
+
+#: users/models.py:13 users/models.py:57
+msgid "last name"
+msgstr "achternaam"
+
+#: users/models.py:14
+msgid "username"
+msgstr "gebruikersnaam"
+
+#: users/models.py:15 users/models.py:58
+msgid "date of birth"
+msgstr "geboortedatum"
+
+#: users/models.py:21
+msgid "staff status"
+msgstr "staff status"
+
+#: users/models.py:22
+msgid "Designates whether the user can log into this admin site."
+msgstr "Geeft aan of de gebruiker kan inloggen op de admin site"
+
+#: users/models.py:24
+msgid "active"
+msgstr "actief"
+
+#: users/models.py:25
+msgid ""
+"Designates whether this user should be treated as active. Deselect this "
+"instead of deleting accounts."
+msgstr ""
+"Geeft aan of deze gebruiker actief is. Deselecteer dit in plaats van "
+"accounts te verwijderen."
+
+#: users/models.py:27
+msgid "superuser"
+msgstr "superuser"
+
+#: users/models.py:45
+msgid "User"
+msgstr "Gebruiker"
+
+#: users/models.py:56
+msgid "prefix"
+msgstr "voorzetsel"
+
+#: users/views.py:15
+msgid "Your details were updated successfully."
+msgstr "Uw gegevens zijn gewijzigd."

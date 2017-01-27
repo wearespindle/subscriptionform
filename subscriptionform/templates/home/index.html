@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Welcome!' %}{% endblock %}
+{% block content %}
+    <div class="header-image"></div>
+    <div class="container">
+        <ul class="menu-navigation">
+            <li class="menu-navigation-item">
+                <a class="menu-navigation-image" href="http://specialolympicsgroningen.debrugprovinciegroningen.nl/"></a>
+            </li>
+            <li class="menu-navigation-item">
+                {% url 'login' as loginurl %}
+                {% blocktrans %}<a class="menu-navigation-link" href="{{ loginurl }}">Login Coaches</a>{% endblocktrans %}
+            </li>
+            <li class="menu-navigation-item">
+                {% blocktrans %}
+                    <a class="menu-navigation-link" href="http://specialolympicsgroningen.debrugprovinciegroningen.nl/organisatie-en-contact.html">
+                        Contact</a>
+                {% endblocktrans %}
+            </li>
+        </ul>
+
+{##}
+{#        <p>{% blocktrans %} The Special Olympics Groningen are held biannually and organized by#}
+{#        "De Brug". You can find more information about the event <a href="http://specialolympicsgroningen.debrugprovinciegroningen.nl/">here</a>{% endblocktrans %}</p>#}
+{#        <p>{% blocktrans %} If you are one of the particpating clubs in the event, please {% endblocktrans %}<a href="{% url 'login' %}">login.</a></p>#}
+{#        <p>{% blocktrans %} If you are a club and would like to participate in the event but haven't received#}
+{#        login credentials yet, please contact the organization.{% endblocktrans %}</p>#}
+{#        <p>{% blocktrans %} If you are the event adminstrator, you can login {% endblocktrans %}<a href="{% url 'admin:index' %}">here.</a></p>#}
+    </div>
+    {% block footer %}
+        <div class="footer">
+            <a class="button-admin" href="{% url 'admin:index' %}">{% blocktrans %}Admin{% endblocktrans %}</a>
+        </div>
+    {% endblock %}
+{% endblock %}

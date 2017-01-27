@@ -37,16 +37,23 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Project apps
-    # 'subscriptionform.apps'
+    'home',
+    'sports',
+    'users',
+    'club',
 
     # Django Extensions is a collection of custom extensions for the Django
     # Framework.
     # https://github.com/django-extensions/django-extensions
-    'django_extensions'
+    'django_extensions',
+    # Phonenumber_field is used to validate phonenumbers and use a PhoneNumberField
+    # in a model. See: https://github.com/stefanfoulis/django-phonenumber-field
+    'phonenumber_field',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -54,6 +61,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'subscriptionform.middleware.LoginRequiredMiddleware',
+    'club.middleware.ClubMiddleware',
 )
 
 ROOT_URLCONF = 'subscriptionform.urls'
@@ -71,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -81,7 +91,14 @@ WSGI_APPLICATION = 'subscriptionform.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
+LANGUAGES = [('en', 'English'),
+             ('nl', 'Dutch'), ]
+
 LANGUAGE_CODE = 'en'
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, os.pardir, 'subscriptionform', os.pardir, 'locale'),
+)
 
 TIME_ZONE = 'Europe/Amsterdam'
 
@@ -91,7 +108,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -100,6 +116,15 @@ STATIC_URL = '/static/'
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+LOGIN_EXEMPT_URLS = (
+    r'^$',
+    r'^password_reset',
+    r'^password_reset_done',
+    r'^reset',
+    r'^admin',
+)
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -172,3 +197,7 @@ LOGGING = {
         }
     }
 }
+
+AUTH_USER_MODEL = 'users.MyUser'
+
+PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'

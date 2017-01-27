@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+        <h2>{% blocktrans %}Coach information{% endblocktrans %}</h2>
+            <table class="base-table">
+                <tbody>
+                    <tr>
+                        <td>{% blocktrans %}First name:{% endblocktrans %}</td>
+                        <td>{{ coach.first_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Prefix:{% endblocktrans %}</td>
+                        <td>{{ coach.prefix }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Last name:{% endblocktrans %}</td>
+                        <td>{{ coach.last_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Date of birth:{% endblocktrans %}</td>
+                        <td>{{ coach.date_of_birth }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Gender:{% endblocktrans %}</td>
+                        <td>{{ coach.gender }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Phone number:{% endblocktrans %}</td>
+                        <td>{{ coach.phone_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}E-mail:{% endblocktrans %}</td>
+                        <td>{{ coach.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Dietary restrictions:{% endblocktrans %}</td>
+                        <td>{{ coach.food_preferences }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+    <a class="button-update" href="{% url 'coach_update' pk=coach.pk %}">{% blocktrans %}Edit coach{% endblocktrans %}</a>
+    <a class="button-delete" href="{% url 'coach_delete' pk=coach.pk %}">{% blocktrans %}Delete this coach{% endblocktrans %}</a>
+    <a class="button-add" href="{% url 'coach_add' %}">{% blocktrans %}Add another coach{% endblocktrans %}</a>
+    <a class="button-return" href="{% url 'coaches' %}">{% blocktrans %}Return to coach list{% endblocktrans %}</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,230 @@
+#header {
+    background-color: #0071bc;
+    text-align: right;
+}
+
+#header a {
+    color: white;
+    padding-right: 20px;
+}
+
+h2 {
+    color: #5f5d8a;
+}
+
+body {
+    background-color: #c6e7ff;
+}
+
+p {
+    font-family: allerta, Arial, "Helvetica Neue", Helvetica, "sans-serif";
+    text-align: left;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 200px;
+}
+
+/* This is the dashboard page*/
+.menu-navigation {
+    margin: 0;
+    padding: 40px 0;
+    list-style: none;
+    text-align: center;
+}
+
+.menu-navigation-item {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    font-size: 22px;
+}
+
+.menu-navigation-link {
+    height: 200px;
+    width: 200px;
+    background: #d4145a;
+    display: inline-block;
+    line-height: 200px;
+    text-transform: uppercase;
+    color: white;
+    margin: 10px;
+    font-size: 22px;
+    float: left;
+}
+
+.menu-navigation-link:hover {
+    background: #FF4FA0;
+    text-decoration: none;
+}
+
+.menu-navigation-link:active {
+    color: white;
+}
+
+.menu-navigation-link:visited {
+    color: white;
+}
+
+.menu-navigation-image {
+    float: left;
+    background-image: url(http://specialolympicsgroningen.debrugprovinciegroningen.nl/images/logo_sog_2015.png);
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    display: inline-block;
+    margin: 10px;
+    background-position: center;
+    background-color: white;
+
+}
+
+.menu-navigation-item:nth-child(2) .menu-navigation-link {
+    margin-right: 0;
+    background: #662d91;
+}
+
+.menu-navigation-item:nth-child(2) .menu-navigation-link:hover {
+    background: #B555FF;
+    text-decoration: none;
+}
+
+.menu-navigation-item:nth-child(2) .menu-navigation-link:active,
+.menu-navigation-item:nth-child(2) .menu-navigation-link:visited {
+    color: white;
+}
+
+.menu-navigation-item:nth-child(3) .menu-navigation-link {
+    margin-right: 0;
+    background: #f7931e;
+}
+
+.menu-navigation-item:nth-child(3) .menu-navigation-link:hover {
+    background: #FFC028;
+    text-decoration: none;
+}
+
+.menu-navigation-item:nth-child(3) .menu-navigation-link:active,
+.menu-navigation-item:nth-child(3) .menu-navigation-link:visited {
+    color: white;
+}
+
+.header-image {
+    height: 390px;
+    width: 100%;
+    background-size: cover;
+    background-image: url(http://specialolympicsgroningen.debrugprovinciegroningen.nl/images/ghm_2076.jpg);
+    background-position: center;
+}
+
+/* Tables are used to display lists and detail information */
+.base-table {
+    background: white;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.base-table tr {
+    border-bottom: 1px solid #c6e7ff;
+}
+
+.base-table td,
+.base-table th {
+    line-height: 30px;
+    padding: 5px;
+    width: 50%;
+}
+
+.button-add {
+    background-color: #f7931e;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.button-add:hover {
+    text-decoration: none;
+    color: white;
+    background: #FFC028;
+}
+
+.button-update {
+    background-color: #0071bc;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+}
+
+.button-update:hover {
+    text-decoration: none;
+    color: white;
+    background: #7A9DFF;
+}
+
+.button-delete {
+    background-color: #c1272d;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+}
+
+.button-delete:hover {
+    text-decoration: none;
+    color: white;
+    background: #FFC028;
+}
+
+.button-return {
+    background-color: #006837;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+}
+
+.button-return:hover{
+    text-decoration: none;
+    color: white;
+    background: #5FB300;
+}
+
+.button-admin {
+    background-color: #f7931e;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    float: right;
+}
+
+.glyphicon-plus {
+    color: #d4145a;
+    font-size: 35px;
+}
+
+.footer {
+    background: #0071bc;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

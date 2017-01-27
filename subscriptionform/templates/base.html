@@ -1,15 +1,37 @@
+{% load staticfiles %}
+{% load i18n %}
+
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/subscription.css' %}">
+
     <title>{% block head_title %}{% endblock %}</title>
     <meta charset="utf-8">
+
 </head>
 <body>
-
-<div id="container">
-    {% block content %}
-    {% endblock %}
+<div id="header">
+    {% if user.is_authenticated %}
+        {% block header %}
+            <a href="{% url 'logout' %}">{% blocktrans %}Logout{% endblocktrans %}</a>
+            <br>
+            <a href="{% url 'menu' %}">Menu</a>
+            <br>
+            <a href="{% url 'user_update' %}">{% blocktrans %}Personal Details{% endblocktrans %}</a>
+        {% endblock %}
+    {% endif %}
 </div>
+
+
+{% block content %}
+{% endblock %}
+{% block footer %}
+    <div class="footer"></div>
+{% endblock %}
 
 </body>
 </html>

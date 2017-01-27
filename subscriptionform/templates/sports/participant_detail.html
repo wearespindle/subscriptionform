@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+        <h2>{% blocktrans %}Participant information {% endblocktrans %}</h2>
+            <table class="base-table">
+                <tbody>
+                    <tr>
+                        <td>{% blocktrans %}First name:{% endblocktrans %}</td>
+                        <td>{{ participant.first_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Prefix:{% endblocktrans %}</td>
+                        <td>{{ participant.prefix }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Last name:{% endblocktrans %}</td>
+                        <td>{{ participant.last_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Date of birth:{% endblocktrans %}</td>
+                        <td>{{ participant.date_of_birth }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Participates in:{% endblocktrans %}</td>
+                        <td>{% for performance in participant.performance_set.all %}
+                            <li><a href="{% url 'performance_update' pk=participant.pk performance_pk=performance.pk %}">{{ performance.discipline }}: {{ performance.qualification }}</a></li>
+                            {% endfor %}
+                            <a href ="{% url 'performance_add' pk=participant.pk %}"><span class="glyphicon glyphicon-plus"></span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Wheelchair bound:{% endblocktrans %}</td>
+                        <td>{{ participant.wheelchair_bound|yesno }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Photos allowed?{% endblocktrans %}</td>
+                        <td>{{ participant.photo_choice|yesno }}</td>
+                    </tr>
+                    <tr>
+                        <td>{% blocktrans %}Dietary restrictions:{% endblocktrans %}</td>
+                        <td>{{ participant.food_preferences }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+    <a class="button-update" href="{% url 'participant_update' pk=participant.pk %}">{% blocktrans %}Edit participant{% endblocktrans %}</a>
+    <a class="button-delete" href="{% url 'participant_delete' pk=participant.pk %}">{% blocktrans %}Delete this participant{% endblocktrans %}</a>
+    <a class="button-add" href="{% url 'participant_add' %}">{% blocktrans %}Add another participant{% endblocktrans %}</a>
+    <a class="button-return" href="{% url 'participants' %}">{% blocktrans %}Return to participant list{% endblocktrans %}</a>
+    </div>
+{% endblock %}

@@ -3,6 +3,7 @@ MAINTAINER subscriptionform
 
 RUN useradd docker
 RUN echo "ALL ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 ENV HOME /home/docker
 
 ADD requirements.txt $HOME/requirements.txt
@@ -18,3 +19,5 @@ ENV DEBUG 1
 ENV DATABASE_URL mysql://subscriptionform:subscriptionform@db/subscriptionform
 
 WORKDIR /home/docker/subscriptionform
+
+ENV PYTHONUNBUFFERED true

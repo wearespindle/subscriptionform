@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+        <h2>{% blocktrans %}Teams{% endblocktrans %}</h2>
+        <table class="base-table">
+            <thead>
+                <tr>
+                    <th>
+                        {% blocktrans %}Team Name{% endblocktrans %}
+                    </th>
+                    <th>
+                        {% blocktrans %}Team Size{% endblocktrans %}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in team_list %}
+                <tr>
+                    <td>
+                        <a href="{% url 'team_detail' pk=team.pk %}">{{ team.team_name }}</a></li>
+                    </td>
+                    <td>
+                        {{ team.team_members|length }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    <a class="button-add" href="{% url 'team_add' %}">{% blocktrans %}Add Team{% endblocktrans %}</a>
+{% endblock %}

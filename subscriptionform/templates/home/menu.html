@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+    <div class="header-image">
+    </div>
+    <div class="container">
+        <ul class="menu-navigation">
+            <li class="menu-navigation-item">
+                <a class="menu-navigation-image" href="http://specialolympicsgroningen.debrugprovinciegroningen.nl/"></a>
+            </li>
+            <li class="menu-navigation-item">
+                {% url 'participants' as participanturl %}
+                {% blocktrans %}<a class="menu-navigation-link" href="{{ participanturl }}">Participants</a>{% endblocktrans %}
+            </li>
+            <li class="menu-navigation-item">
+                {% url 'teams' as teamurl %}
+                {% blocktrans %}<a class="menu-navigation-link" href="{{ teamurl }}">Teams</a>{% endblocktrans %}
+            </li>
+             <li class="menu-navigation-item">
+                {% url 'coaches' as coachurl %}
+                {% blocktrans %}<a class="menu-navigation-link" href="{{ coachurl }}">Coaches</a>{% endblocktrans %}
+            </li>
+        </ul>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}
