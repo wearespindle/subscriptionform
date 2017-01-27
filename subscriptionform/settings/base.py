@@ -124,6 +124,7 @@ LOGIN_EXEMPT_URLS = (
     r'^password_reset_done',
     r'^reset',
     r'^admin',
+    r'^static',
 )
 
 # Additional locations of static files
