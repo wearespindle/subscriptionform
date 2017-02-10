@@ -25,7 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '5up$4$tbc-_ba*5unq@89wlp642_qobv_f%&m7p@royty2-u&7')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '')
+
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',')
 
 # Application definition
 
@@ -128,11 +131,6 @@ LOGIN_EXEMPT_URLS = (
     r'^static',
 )
 
-# Additional locations of static files
-STATICFILES_DIRS = (
-    # os.path.join(BASE_DIR, 'static'),
-)
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
@@ -141,12 +139,10 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL = 'Info <info@example.com>'
-SERVER_EMAIL = 'Alerts <alerts@example.com>'
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'Info <noreply@example.com>')
+SERVER_EMAIL = os.getenv('SERVER_EMAIL', 'Alerts <noreply@example.com>')
 
-ADMINS = (
-    ('Admin', 'admin@example.com'),
-)
+ADMINS = MANAGERS = os.getenv('ADMINS', 'alerts@example.com').split(',')
 
 
 LOGGING = {
@@ -155,9 +151,6 @@ LOGGING = {
     'formatters': {
         'default': {
             'format': '%(asctime)s  [%(name)s:%(lineno)s]  %(levelname)s - %(message)s',
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s',
         },
     },
     'filters': {
@@ -204,3 +197,19 @@ LOGGING = {
 AUTH_USER_MODEL = 'users.MyUser'
 
 PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'
+
+X_FRAME_OPTIONS = 'DENY'
+
+CSRF_COOKIE_HTTPONLY = True
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+SECURE_BROWSER_XSS_FILTER = True
+
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+
+# Database connection settings
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+}
