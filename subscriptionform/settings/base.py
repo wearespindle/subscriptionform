@@ -18,8 +18,8 @@ import dj_database_url
 # Turn 0 or 1 into False/True respectively
 boolean = lambda value: bool(int(value))
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+SUBSCRIPTIONFORM_DIR = os.path.dirname(os.path.abspath(os.path.join(__file__, os.path.pardir)))
+PROJECT_DIR = os.path.dirname(SUBSCRIPTIONFORM_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'sports',
     'users',
     'club',
+    'subscriptionform',
 
     # Django Extensions is a collection of custom extensions for the Django
     # Framework.
@@ -75,9 +76,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(SUBSCRIPTIONFORM_DIR, 'templates'),
         ],
-        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -85,6 +85,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
+            ],
+            'loaders': [
+                ('django.template.loaders.cached.Loader', [
+                    'django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader',
+                ]),
             ],
         },
     },
@@ -101,7 +107,7 @@ LANGUAGES = [('en', 'English'),
 LANGUAGE_CODE = 'en'
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, os.pardir, 'subscriptionform', os.pardir, 'locale'),
+    os.path.join(PROJECT_DIR, 'locale'),
 )
 
 TIME_ZONE = 'Europe/Amsterdam'
@@ -131,7 +137,7 @@ LOGIN_EXEMPT_URLS = (
     r'^static',
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = os.getenv('EMAIL_PORT', 587)

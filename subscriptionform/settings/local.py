@@ -6,10 +6,14 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 ALLOWED_HOSTS = []
 CSRF_TRUSTED_ORIGINS = []
 
+TEMPLATES[0]['OPTIONS']['loaders'] = [
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+]
+
 #############################################
 #     DJANGO DEBUG TOOLBAR CONFIGURATION    #
 #############################################
-
 if DEBUG:
 
     MIDDLEWARE_CLASSES += (
