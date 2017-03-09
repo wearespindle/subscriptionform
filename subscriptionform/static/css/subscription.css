@@ -121,6 +121,17 @@ p {
     background-position: center;
 }
 
+.text-box {
+    background-color: #FFFFFF;
+    heigth: 100%;
+    width: 100%;
+}
+
+.welcometxt {
+    text-align: center;
+    line-height: 30px;
+}
+
 /* Tables are used to display lists and detail information */
 .base-table {
     background: white;
