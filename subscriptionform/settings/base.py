@@ -54,6 +54,7 @@ INSTALLED_APPS = (
     # Phonenumber_field is used to validate phonenumbers and use a PhoneNumberField
     # in a model. See: https://github.com/stefanfoulis/django-phonenumber-field
     'phonenumber_field',
+    'import_export',
 )
 
 MIDDLEWARE_CLASSES = (
