@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-27 10:14+0100\n"
+"POT-Creation-Date: 2017-03-24 11:49+0100\n"
 "PO-Revision-Date: 2016-09-30 11:30+0200\n"
 "Last-Translator: Rosien van Toor <rosien@wearespindle.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr "stad"
 msgid "phonenumber"
 msgstr "telefoonnummer"
 
-#: club/models.py:33 sports/models.py:40 users/models.py:17
+#: club/models.py:33 sports/models.py:40 users/models.py:18
 msgid "email address"
 msgstr "emailadres"
 
@@ -123,7 +123,6 @@ msgid "Are you sure you want to delete \"%(object)s\"?"
 msgstr "Weet u zeker dat u \"%(object)s\" wil verwijderen?"
 
 #: subscriptionform/templates/edit_performance_form.html:12
-#| msgid "Delete this participant"
 msgid "Delete this performance"
 msgstr "Prestatie verwijderen"
 
@@ -150,7 +149,7 @@ msgstr ""
 "                        Contact</a>\n"
 "                "
 
-#: subscriptionform/templates/home/index.html:34
+#: subscriptionform/templates/home/index.html:57
 msgid "Admin"
 msgstr "Admin"
 
@@ -169,11 +168,8 @@ msgstr "<a class=\"menu-navigation-link\" href=\"%(teamurl)s\">Teams</a>"
 
 #: subscriptionform/templates/home/menu.html:23
 #, python-format
-#| msgid ""
-#| "<a class=\"menu-navigation-link\" href=\"%(loginurl)s\">Login Coaches</a>"
 msgid "<a class=\"menu-navigation-link\" href=\"%(coachurl)s\">Coaches</a>"
-msgstr ""
-"<a class=\"menu-navigation-link\" href=\"%(coachurl)s\">Login Coaches</a>"
+msgstr "<a class=\"menu-navigation-link\" href=\"%(coachurl)s\">Coaches</a>"
 
 #: subscriptionform/templates/registration/login.html:9
 msgid " Your username and password didn't match. Please try again. "
@@ -246,7 +242,6 @@ msgstr ""
 "wachtwoord kunt resetten."
 
 #: subscriptionform/templates/sports/coach_detail.html:6
-#| msgid "Team information"
 msgid "Coach information"
 msgstr "Coach informatie"
 
@@ -275,7 +270,6 @@ msgid "Gender:"
 msgstr "Geslacht"
 
 #: subscriptionform/templates/sports/coach_detail.html:30
-#| msgid "phonenumber"
 msgid "Phone number:"
 msgstr "Telefoonnummer"
 
@@ -289,27 +283,22 @@ msgid "Dietary restrictions:"
 msgstr "Dieetbeperkingen"
 
 #: subscriptionform/templates/sports/coach_detail.html:44
-#| msgid "Edit Team"
 msgid "Edit coach"
 msgstr "Coach aanpassen"
 
 #: subscriptionform/templates/sports/coach_detail.html:45
-#| msgid "Delete this participant"
 msgid "Delete this coach"
 msgstr "Coach verwijderen"
 
 #: subscriptionform/templates/sports/coach_detail.html:46
-#| msgid "Add another participant"
 msgid "Add another coach"
 msgstr "Nog een cooach toevoegen"
 
 #: subscriptionform/templates/sports/coach_detail.html:47
-#| msgid "Return to team list"
 msgid "Return to coach list"
 msgstr "Ga terug naar coachoverzicht"
 
 #: subscriptionform/templates/sports/coach_list.html:11
-#| msgid "Team Name"
 msgid "Coach Name"
 msgstr "Naam Coach"
 
@@ -318,7 +307,8 @@ msgid "Add Coach"
 msgstr "Coach Toevoegen"
 
 #: subscriptionform/templates/sports/participant_detail.html:6
-msgid "Participant information"
+#| msgid "Participant information"
+msgid "Participant information "
 msgstr "Deelnemersinformatie"
 
 #: subscriptionform/templates/sports/participant_detail.html:26
@@ -405,35 +395,39 @@ msgstr "Team toevoegen"
 msgid "Update your personal details."
 msgstr "Wijzig uw persoonlijke gegevens."
 
-#: users/models.py:12 users/models.py:55
+#: users/models.py:12 users/models.py:57
 msgid "first name"
 msgstr "voornaam"
 
-#: users/models.py:13 users/models.py:57
+#: users/models.py:13 users/models.py:58
+msgid "prefix"
+msgstr "voorzetsel"
+
+#: users/models.py:14 users/models.py:59
 msgid "last name"
 msgstr "achternaam"
 
-#: users/models.py:14
+#: users/models.py:15
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: users/models.py:15 users/models.py:58
+#: users/models.py:16 users/models.py:60
 msgid "date of birth"
 msgstr "geboortedatum"
 
-#: users/models.py:21
+#: users/models.py:22
 msgid "staff status"
 msgstr "staff status"
 
-#: users/models.py:22
+#: users/models.py:23
 msgid "Designates whether the user can log into this admin site."
 msgstr "Geeft aan of de gebruiker kan inloggen op de admin site"
 
-#: users/models.py:24
+#: users/models.py:25
 msgid "active"
 msgstr "actief"
 
-#: users/models.py:25
+#: users/models.py:26
 msgid ""
 "Designates whether this user should be treated as active. Deselect this "
 "instead of deleting accounts."
@@ -441,17 +435,13 @@ msgstr ""
 "Geeft aan of deze gebruiker actief is. Deselecteer dit in plaats van "
 "accounts te verwijderen."
 
-#: users/models.py:27
+#: users/models.py:28
 msgid "superuser"
 msgstr "superuser"
 
-#: users/models.py:45
+#: users/models.py:46
 msgid "User"
 msgstr "Gebruiker"
-
-#: users/models.py:56
-msgid "prefix"
-msgstr "voorzetsel"
 
 #: users/views.py:15
 msgid "Your details were updated successfully."
