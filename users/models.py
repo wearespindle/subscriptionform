@@ -10,6 +10,7 @@ class MyUser(ClubMixin, PermissionsMixin, AbstractBaseUser):
     Custom User model that allows logging in with email as username.
     """
     first_name = models.CharField(_('first name'), max_length=50)
+    prefix = models.CharField(_('prefix'), max_length=10, blank=True)
     last_name = models.CharField(_('last name'), max_length=50)
     username = models.CharField(_('username'), max_length=30)
     date_of_birth = models.DateField(_('date of birth'), blank=True, null=True)

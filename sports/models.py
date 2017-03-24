@@ -21,7 +21,7 @@ class Participant(Person):
         verbose_name = _('Participant')
 
     def get_full_name(self):
-        return self.first_name + " " + self.last_name
+        return self.first_name + " " + self.prefix + " " + self.last_name
 
     def _full_name(self):
         return '%s %s %s' % (self.first_name, self.prefix, self.last_name)
