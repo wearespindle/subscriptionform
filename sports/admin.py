@@ -39,7 +39,7 @@ class TeamResource(resources.ModelResource):
 
 @admin.register(Participant)
 class ParticipantAdmin(ImportExportModelAdmin):
-    list_display = ('first_name', 'last_name', 'club',)
+    list_display = ('first_name', 'prefix', 'last_name', 'club',)
     list_filter = ('disciplines', 'club', 'wheelchair_bound',)
     resource_class = ParticipantResource
 
